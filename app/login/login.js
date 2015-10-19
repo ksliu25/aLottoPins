@@ -1,8 +1,11 @@
-'use strict';
+(function(){
+	'use strict';
 
-angular
-	.module('myApp.login', ['ngRoute'])
+	angular
+		.module('myApp.login', ['ngRoute'])
+		.controller('LoginCtrl', [function() {
+			
 
-.controller('LoginCtrl', [function() {
+	}]);
 
-}]);
+})();
