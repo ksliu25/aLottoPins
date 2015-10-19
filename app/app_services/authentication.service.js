@@ -4,8 +4,8 @@
 	angular.module('myApp.authenticate')
 	.factory('AuthenticationService', AuthenticationService);
 
-	AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', 'UserService'];
-	function AuthenticationService($http, $cookieStore, $rootScope, UserService){
+	AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope'];
+	function AuthenticationService($http, $cookieStore, $rootScope){
 		var service = {};
 
 		service.Login = Login;

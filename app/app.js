@@ -8,5 +8,15 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/login'});
+  $routeProvider
+  .when('/login', {
+    templateUrl: 'login/login.html',
+    controller: 'LoginCtrl'
+	})
+  .when('/view2', {
+    templateUrl: 'register/view2.html',
+    controller: 'View2Ctrl'
+  })
+  .otherwise({redirectTo: '/login'});
+
 }]);
