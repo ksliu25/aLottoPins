@@ -5,8 +5,8 @@
 		.module('myApp.login', ['ngRoute'])
 		.controller('LoginCtrl', LoginCtrl);
 
-		LoginCtrl.$inject = ['$location', 'AuthenticationService'];
-		function LoginCtrl($location, AuthenticationService) {
+		LoginCtrl.$inject = ['$location', 'AuthenticationService', 'FlashService'];
+		function LoginCtrl($location, AuthenticationService, FlashService) {
 			var form = this;
 			form.login = login;
 
@@ -21,6 +21,7 @@
 						AuthenticationService.SetCredentials(form.email, form.password);
 						$location.path('/');
 					} else {
+						FlashService.Error(response.message)
 						form.dataLoading = false;
 					}
 				});

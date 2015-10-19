@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.login',
-  'myApp.view2',
+  'myApp.register',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -13,9 +13,9 @@ config(['$routeProvider', function($routeProvider) {
     templateUrl: 'login/login.html',
     controller: 'LoginCtrl'
 	})
-  .when('/view2', {
-    templateUrl: 'register/view2.html',
-    controller: 'View2Ctrl'
+  .when('/register', {
+    templateUrl: 'register/register.html',
+    controller: 'RegisterCtrl'
   })
   .otherwise({redirectTo: '/login'});
 
