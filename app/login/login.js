@@ -7,22 +7,22 @@
 
 		LoginCtrl.$inject = ['$location', 'AuthenticationService', 'FlashService'];
 		function LoginCtrl($location, AuthenticationService, FlashService) {
-			var form = this;
-			form.login = login;
+			var loginform = this;
+			loginform.login = login;
 
 			(function initController(){
 				AuthenticationService.ClearCredentials();
 			})();
 
 			function login(){
-				form.dataLoading = true;
-				AuthenticationService.Login(form.email, form.password, function(response) {
+				loginform.dataLoading = true;
+				AuthenticationService.Login(loginform.email, loginform.password, function(response) {
 					if (response.success){
-						AuthenticationService.SetCredentials(form.email, form.password);
+						AuthenticationService.SetCredentials(loginform.email, loginform.password);
 						$location.path('/');
 					} else {
 						FlashService.Error(response.message)
-						form.dataLoading = false;
+						loginform.dataLoading = false;
 					}
 				});
 			};

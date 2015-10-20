@@ -8,16 +8,18 @@ angular.module('myApp', [
   'myApp.register',
   'myApp.version'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
   .when('/login', {
     templateUrl: 'login/login.html',
-    controller: 'LoginCtrl'
+    controller: 'LoginCtrl',
+    controllerAs: 'loginform'
 	})
   .when('/register', {
     templateUrl: 'register/register.html',
-    controller: 'RegisterCtrl'
+    controller: 'RegisterCtrl',
+    controllerAs: 'registerform'
   })
   .otherwise({redirectTo: '/login'});
 
-}]);
+}])
