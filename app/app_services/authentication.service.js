@@ -1,11 +1,12 @@
 (function() {
 	'use strict';
 
-	angular.module('myApp')
-	.factory('AuthenticationService', AuthenticationService);
+	angular
+		.module('myApp')
+		.factory('AuthenticationService', AuthenticationService);
 
-	AuthenticationService.$inject = ['$http', '$cookies', '$rootScope'];
-	function AuthenticationService($http, $cookies, $rootScope){
+	AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope'];
+	function AuthenticationService($http, $cookieStore, $rootScope){
 		var service = {};
 
 		service.Login = Login;
@@ -31,12 +32,12 @@
 				}
 			};
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-			$cookies.put('globals', $rootScope.globals);
+			$cookieStore.put('globals', $rootScope.globals);
 		}
 
 		function ClearCredentials(){
 			$rootScope.globals = {};
-			$cookies.remove('globals');
+			$cookieStore.remove('globals');
 			$http.defaults.headers.common.Authorization = 'Basic ';
 		}
 
