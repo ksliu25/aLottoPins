@@ -16,6 +16,8 @@
 		return service;
 
 		function Login(email, password, callback) {
+			var authdata = btoa(email + ':' + password);
+			$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 			$http.post('http://bowling-api.nextcapital.com/api/login', {email: email, password: password })
 				.success(function (response) {
 					callback(response);
