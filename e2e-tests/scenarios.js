@@ -5,37 +5,37 @@
 describe('my app', function() {
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to /login when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/login");
   });
 
 
-  describe('view1', function() {
+  describe('login', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('index.html#/login');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render login when user navigates to /login', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+        toMatch(/partial for login/);
     });
 
   });
 
 
-  describe('view2', function() {
+  describe('register', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view2');
+      browser.get('index.html#/register');
     });
 
 
-    it('should render view2 when user navigates to /view2', function() {
+    it('should render register when user navigates to /register', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+        toMatch(/partial for register/);
     });
 
   });
