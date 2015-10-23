@@ -6,6 +6,7 @@
     .module('myApp', [
       'ngCookies',
       'ngRoute',
+      'ngResource',
       'myApp.login',
       'myApp.register',
       'myApp.version'
