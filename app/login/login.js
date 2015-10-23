@@ -17,11 +17,11 @@
 			function login(){
 				loginform.dataLoading = true;
 				AuthenticationService.Login(loginform.email, loginform.password, function(response) {
-					if (response.success){
+					if (response.status === 200){
 						AuthenticationService.SetCredentials(loginform.email, loginform.password);
 						$location.path('/');
 					} else {
-						FlashService.Error(response.message)
+						FlashService.Error("Error!")
 						loginform.dataLoading = false;
 					}
 				});
