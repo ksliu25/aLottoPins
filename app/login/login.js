@@ -21,7 +21,8 @@
 						AuthenticationService.SetCredentials(loginform.email, loginform.password);
 						$location.path('/');
 					} else {
-						FlashService.Error("Error!")
+						var invalid = response.status.toString() + ' Username or password is incorrect!'
+						FlashService.Error(invalid)
 						loginform.dataLoading = false;
 					}
 				});
