@@ -3,10 +3,10 @@
 
 	angular
 		.module('myApp')
-		.factory('LeaguesService', LeaguesService);
+		.factory('BowlersService', BowlersService);
 
-		LeaguesService.$inject = ['$http'];
-		function LeaguesService($http) {
+		BowlersService.$inject = ['$http'];
+		function BowlersService($http) {
 			var service = {};
 
 			service.BowlerCreate = BowlerCreate;
@@ -15,6 +15,10 @@
 
 
 			return service;
+		}
+
+		function BowlerCreate(name){
+			$http.post
 		}
 
 
