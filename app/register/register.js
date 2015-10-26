@@ -7,20 +7,20 @@
 
 		RegisterCtrl.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
 		function RegisterCtrl(UserService, $location, $rootScope, FlashService){
-			var registerform = this;
+			var vm = this;
 
-			registerform.register = register;
+			vm.register = register;
 
 			function register(){
-				registerform.dataLoading = true;
-				UserService.Create(registerform.user)
+				vm.dataLoading = true;
+				UserService.Create(vm.user)
 					.then(function(response){
-						if (response.success) {
+						if (response.status === 200) {
 							FlashService.Success('Registration Successful!', true);
 							$location.path('/login');
 						} else {
 							FlashService.Error(response.message);
-							registerform.dataLoading = false;
+							vm.dataLoading = false;
 						}
 					});
 			}

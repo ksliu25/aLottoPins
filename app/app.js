@@ -20,12 +20,12 @@
       .when('/login', {
         templateUrl: 'login/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'loginform'
+        controllerAs: 'vm'
     	})
       .when('/register', {
         templateUrl: 'register/register.html',
         controller: 'RegisterCtrl',
-        controllerAs: 'registerform'
+        controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/login'});
 
