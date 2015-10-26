@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular
-		.module('myApp.register', ['ngRoute'])
-		.controller('RegisterCtrl', RegisterCtrl)
+		.module('myApp')
+		.controller('RegisterController', RegisterController)
 
-		RegisterCtrl.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
-		function RegisterCtrl(UserService, $location, $rootScope, FlashService){
+		RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
+		function RegisterController(UserService, $location, $rootScope, FlashService){
 			var vm = this;
 
 			vm.register = register;

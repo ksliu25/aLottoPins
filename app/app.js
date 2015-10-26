@@ -7,8 +7,6 @@
       'ngCookies',
       'ngRoute',
       'ngResource',
-      'myApp.login',
-      'myApp.register',
       'myApp.version'
     ])
     .config(config)
@@ -22,14 +20,18 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .when('bowlers/:bowlerId', {
+              templateUrl: 'partials/phone-detail.html',
+              controller: 'PhoneDetailCtrl'
+            })
       .when('/login', {
         templateUrl: 'login/login.view.html',
-        controller: 'LoginCtrl',
+        controller: 'LoginController',
         controllerAs: 'vm'
     	})
       .when('/register', {
         templateUrl: 'register/register.view.html',
-        controller: 'RegisterCtrl',
+        controller: 'RegisterController',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/login'});
