@@ -7,23 +7,23 @@
 
 		LoginCtrl.$inject = ['$location', 'AuthenticationService', 'FlashService'];
 		function LoginCtrl($location, AuthenticationService, FlashService) {
-			var loginform = this;
-			loginform.login = login;
+			var vm = this;
+			vm.login = login;
 
 			(function initController(){
 				AuthenticationService.ClearCredentials();
 			})();
 
 			function login(){
-				loginform.dataLoading = true;
-				AuthenticationService.Login(loginform.email, loginform.password, function(response) {
+				vm.dataLoading = true;
+				AuthenticationService.Login(vm.email, vm.password, function(response) {
 					if (response.status === 200){
-						AuthenticationService.SetCredentials(loginform.email, loginform.password);
+						AuthenticationService.SetCredentials(vm.email, vm.password);
 						$location.path('/');
 					} else {
 						var invalid = response.status.toString() + ' Username or password is incorrect!'
 						FlashService.Error(invalid)
-						loginform.dataLoading = false;
+						vm.dataLoading = false;
 					}
 				});
 			};
