@@ -7,8 +7,6 @@
       'ngCookies',
       'ngRoute',
       'ngResource',
-      'myApp.login',
-      'myApp.register',
       'myApp.version'
     ])
     .config(config)
@@ -17,14 +15,24 @@
   config.$inject = ['$routeProvider', '$locationProvider'];
   function config($routeProvider, $locationProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'home/home.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .when('/bowlers/:bowlerId', {
+              templateUrl: 'home/bowlershow.view.html',
+              controller: 'HomeController',
+              controllerAs: 'vm'
+      })
       .when('/login', {
-        templateUrl: 'login/login.html',
-        controller: 'LoginCtrl',
+        templateUrl: 'login/login.view.html',
+        controller: 'LoginController',
         controllerAs: 'vm'
     	})
       .when('/register', {
-        templateUrl: 'register/register.html',
-        controller: 'RegisterCtrl',
+        templateUrl: 'register/register.view.html',
+        controller: 'RegisterController',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/login'});
