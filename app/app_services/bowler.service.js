@@ -23,11 +23,11 @@
 					});
 			}
 
-			function BowlersIndex(){
+			function BowlersIndex(callback){
 				$http.get('http://bowling-api.nextcapital.com/api/bowlers')
-					// .then(function successCallback(response){
-					// 	callback(response);
-					// });
+					.then(function successCallback(response){
+						callback(response);
+					});
 			}
 
 			function BowlersShow(bowlerId, callback){
