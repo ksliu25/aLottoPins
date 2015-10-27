@@ -20,10 +20,11 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      // .when('bowlers/:bowlerId', {
-      //         templateUrl: 'partials/phone-detail.html',
-      //         controller: 'PhoneDetailCtrl'
-      //       })
+      .when('/bowlers/:bowlerId', {
+              templateUrl: 'home/bowlershow.view.html',
+              controller: 'HomeController',
+              controllerAs: 'vm'
+      })
       .when('/login', {
         templateUrl: 'login/login.view.html',
         controller: 'LoginController',
