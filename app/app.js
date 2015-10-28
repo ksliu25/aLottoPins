@@ -6,7 +6,6 @@
     .module('myApp', [
       'ngCookies',
       'ngRoute',
-      'ngResource',
       'myApp.version'
     ])
     .config(config)
@@ -20,10 +19,15 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .when('/bowlers/add', {
+        templateUrl: 'home/bowleradd.view.html',
+        controller: 'BowlerController',
+        controllerAs: 'vm'
+      })
       .when('/bowlers/:bowlerId', {
-              templateUrl: 'home/bowlershow.view.html',
-              controller: 'HomeController',
-              controllerAs: 'vm'
+        templateUrl: 'home/bowlershow.view.html',
+        controller: 'BowlerController',
+        controllerAs: 'vm'
       })
       .when('/login', {
         templateUrl: 'login/login.view.html',
