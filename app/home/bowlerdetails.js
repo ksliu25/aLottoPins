@@ -3,10 +3,10 @@
 
 	angular
 		.module('myApp')
-		.controller('BowlerController', BowlerController);
+		.controller('BowlerDetailsController', BowlerDetailsController);
 
-		BowlerController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$location'];
-		function BowlerController(BowlersService, FlashService, $stateParams, $location){
+		BowlerDetailsController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$location'];
+		function BowlerDetailsController(BowlersService, FlashService, $stateParams, $location){
 			var vm = this;
 			vm.bowlersAdd = bowlersAdd;
 			vm.bowlerShow = bowlerShow;

@@ -17,27 +17,31 @@
 
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-default">
-      <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">aLottoPins</a>
-            </div>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" ui-sref="home">aLottoPins</a>
+                </div>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/login">Login</a></li>
-                <li><a href="#/register">Register</a></li>
-            </ul>
-      </div>
-    </nav>
-  </header>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a ui-sref="login">Login</a>
+                    </li>
+                    <li>
+                        <a ui-sref="register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   
   <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-  <div ng-view></div>
+  <div ui-view></div>
 
   <div>Angular seed app: v<span app-version></span></div>
 
@@ -46,6 +50,7 @@
   -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -60,6 +65,7 @@
   <script src="home/home.js"></script>
   <script src="home/bowler.js"></script>
   <script src="home/league.js"></script>
+  <script src="home/leaguedetails.js"></script>
 
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
