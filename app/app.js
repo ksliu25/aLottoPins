@@ -6,55 +6,65 @@
     .module('myApp', [
       'ngCookies',
       'ngRoute',
+      'ui.router',
       'myApp.version'
     ])
     .config(config)
     .run(run);
 
-  config.$inject = ['$routeProvider', '$locationProvider'];
-  function config($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
+  config.$inject = ['$stateProvider', '$urlRouterProvider'];
+  function config($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/login');
+
+    $stateProvider
+      .state('home', {
+        url: '/',
         templateUrl: 'home/home.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .when('/login', {
+      .state('login', {
+        url: '/login',
         templateUrl: 'login/login.view.html',
         controller: 'LoginController',
         controllerAs: 'vm'
     	})
-      .when('/register', {
+      .state('register', {
+        url: '/register',
         templateUrl: 'register/register.view.html',
         controller: 'RegisterController',
         controllerAs: 'vm'
       })
-      .when('/bowlers/add', {
+      .state('bowlersadd', {
+        url: '/bowlers/add',
         templateUrl: 'home/bowleradd.view.html',
         controller: 'BowlerController',
         controllerAs: 'vm'
       })
-      .when('/bowlers/:bowlerId', {
+      .state('bowlersshow', {
+        url: '/bowlers/:bowlerId',
         templateUrl: 'home/bowlershow.view.html',
         controller: 'BowlerController',
         controllerAs: 'vm'
       })
-      .when('/leagues', {
+      .state('leagues', {
+        url: '/leagues',
         templateUrl: 'home/home.view.html',
         controller: 'LeagueController',
         controllerAs: 'vm'
       })
-      .when('/leagues/add', {
+      .state('leaguesadd', {
+        url: '/leagues/add',
         templateUrl: 'home/leagueadd.view.html',
         controller: 'LeagueController',
         controllerAs: 'vm'
       })
-      .when('/leagues/:leagueId', {
+      .state('leaguesshow', {
+        url: '/leagues/:leagueId',
         templateUrl: 'home/leagueshow.view.html',
         controller: 'LeagueController',
         controllerAs: 'vm'
       })
-      .otherwise({redirectTo: '/login'});
 
   }
 
