@@ -62,7 +62,7 @@
       .state('leaguesshow', {
         url: '/leagues/:leagueId',
         templateUrl: 'home/leagueshow.view.html',
-        controller: 'LeagueController',
+        controller: 'LeagueDetailsController',
         controllerAs: 'vm'
       })
 
