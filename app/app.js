@@ -19,6 +19,16 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .when('/login', {
+        templateUrl: 'login/login.view.html',
+        controller: 'LoginController',
+        controllerAs: 'vm'
+    	})
+      .when('/register', {
+        templateUrl: 'register/register.view.html',
+        controller: 'RegisterController',
+        controllerAs: 'vm'
+      })
       .when('/bowlers/add', {
         templateUrl: 'home/bowleradd.view.html',
         controller: 'BowlerController',
@@ -42,16 +52,6 @@
       .when('/leagues/:leagueId', {
         templateUrl: 'home/leagueshow.view.html',
         controller: 'LeagueController',
-        controllerAs: 'vm'
-      })
-      .when('/login', {
-        templateUrl: 'login/login.view.html',
-        controller: 'LoginController',
-        controllerAs: 'vm'
-    	})
-      .when('/register', {
-        templateUrl: 'register/register.view.html',
-        controller: 'RegisterController',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/login'});

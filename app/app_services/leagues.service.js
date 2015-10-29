@@ -11,9 +11,9 @@
 
 			service.LeaguesCreate = LeaguesCreate;
 			service.LeaguesIndex = LeaguesIndex;
+			service.LeaguesBowlers = LeaguesBowlers;
 			service.LeaguesShow = LeaguesShow;
 			// service.LeaguesAddBowler = LeaguesAddBowler;
-			// service.LeaguesBowlers = LeaguesBowlers;
 			
 			return service;
 
@@ -31,8 +31,15 @@
 					});
 			}
 
-			function LeaguesShow(bowlerId, callback){
-				$http.get('http://bowling-api.nextcapital.com/api/leagues' + bowlerId)
+			function LeaguesShow(leagueId, callback){
+				$http.get('http://bowling-api.nextcapital.com/api/leagues' + leagueId)
+					.then(function successCallback(response){
+						callback(response);
+					});
+			}
+
+			function LeaguesBowlers(leagueId, callback){
+				$http.get('http://bowling-api.nextcapital.com/api/leagues/' + leagueId + '/bowlers')
 					.then(function successCallback(response){
 						callback(response);
 					});
