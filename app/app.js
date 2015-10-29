@@ -29,6 +29,21 @@
         controller: 'BowlerController',
         controllerAs: 'vm'
       })
+      .when('/leagues', {
+        templateUrl: 'home/home.view.html',
+        controller: 'LeagueController',
+        controllerAs: 'vm'
+      })
+      .when('/leagues/add', {
+        templateUrl: 'home/leagueadd.view.html',
+        controller: 'LeagueController',
+        controllerAs: 'vm'
+      })
+      .when('/leagues/:leagueId', {
+        templateUrl: 'home/leagueshow.view.html',
+        controller: 'LeagueController',
+        controllerAs: 'vm'
+      })
       .when('/login', {
         templateUrl: 'login/login.view.html',
         controller: 'LoginController',

@@ -16,7 +16,7 @@
 			// console.log(bowlersIndex())
 
 			function bowlersAdd(name){
-				BowlersService.BowlerCreate(vm.name, function(response){
+				BowlersService.BowlersCreate(vm.name, function(response){
 					if (response.status === 200){
 						bowlersIndex();
 						FlashService.Success(vm.name + ' has been successfully created!', true);

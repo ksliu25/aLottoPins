@@ -9,14 +9,14 @@
 		function BowlersService($http) {
 			var service = {};
 
-			service.BowlerCreate = BowlerCreate;
+			service.BowlersCreate = BowlersCreate;
 			service.BowlersIndex = BowlersIndex;
 			service.BowlersShow = BowlersShow;
 
 
 			return service;
 
-			function BowlerCreate(name, callback){
+			function BowlersCreate(name, callback){
 				$http.post('http://bowling-api.nextcapital.com/api/bowlers', {name: name})
 					.then(function successCallback(response){
 						callback(response);
