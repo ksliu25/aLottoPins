@@ -32,7 +32,7 @@
 			}
 
 			function LeaguesShow(leagueId, callback){
-				$http.get('http://bowling-api.nextcapital.com/api/leagues' + leagueId)
+				$http.get('http://bowling-api.nextcapital.com/api/leagues/' + leagueId)
 					.then(function successCallback(response){
 						callback(response);
 					});

@@ -5,15 +5,15 @@
 		.module('myApp')
 		.controller('BowlerController', BowlerController);
 
-		BowlerController.$inject = ['BowlersService', 'FlashService', '$routeParams', '$location'];
-		function BowlerController(BowlersService, FlashService, $routeParams, $location){
+		BowlerController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$location'];
+		function BowlerController(BowlersService, FlashService, $stateParams, $location){
 			var vm = this;
 			vm.bowlersAdd = bowlersAdd;
-			// vm.bowlerShow = bowlerShow;
+			vm.bowlerShow = bowlerShow;
+			vm.bowlerId = $stateParams.bowlerId
 			vm.bowlers;
-			vm.bowlerId = $routeParams.bowlerId
+			vm.currentBowler;
 			bowlersIndex();
-			// console.log(bowlersIndex())
 
 			function bowlersAdd(name){
 				BowlersService.BowlersCreate(vm.name, function(response){
@@ -32,9 +32,11 @@
 			}
 
 
-			// function bowlerShow(){
-
-			// }
+			function bowlerShow(bowlerId){
+				BowlersService.BowlersShow(bowlerId, function(response){
+					vm.currentBowler = response.data
+				});
+			}
 
 
 		}
