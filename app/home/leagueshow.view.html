@@ -1,2 +1,12 @@
-<h1>placeholder for League ID:{{vm.leagueId}}</h1>
 
+<div ng-controller="BowlerController as bowlerCtrl" class="bowlers col-md-4 col-md-offset-1">
+<h1 ng-show="vm.selectedLeague">Add Bowlers to {{ vm.selectedLeague.name }}</h1>
+    <h2>Bowlers</h2>
+    <!-- <a ui-sref="bowlersadd"><h4>Add New Bowler</h4></a> -->
+    <h3> Number of bowlers: {{ bowlerCtrl.bowlers.length }}</h3>
+    <ul class="bowlerslist">
+        <li ng-repeat='bowler in bowlerCtrl.bowlers'>
+           {{ bowler.name }}
+        </li>    
+    </ul>
+</div>

@@ -5,12 +5,10 @@
 		.module('myApp')
 		.controller('LeagueController', LeagueController);
 
-		LeagueController.$inject = ['LeaguesService', 'FlashService', '$stateParams', '$location'];
-		function LeagueController(LeaguesService, FlashService, $stateParams, $location){
+		LeagueController.$inject = ['LeaguesService', 'FlashService', '$location'];
+		function LeagueController(LeaguesService, FlashService, $location){
 			var vm = this;
 			vm.LeaguesAdd = LeaguesAdd;
-			vm.LeagueShow = LeagueShow;
-			vm.leagueId = $stateParams.leagueId
 			vm.leagues;
 			vm.currentLeague;
 			LeaguesIndex();
@@ -30,14 +28,6 @@
 					vm.leagues = response.data
 				});
 			}
-
-
-			function LeagueShow(leagueId){
-				LeaguesService.LeaguesShow(leagueId, function(response){
-					vm.currentLeague = response.data
-				});
-			}
-
 
 		}
 

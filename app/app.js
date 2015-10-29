@@ -59,18 +59,12 @@
         controller: 'LeagueController',
         controllerAs: 'vm'
       })
-      .state('leaguesaddbowler', {
+      .state('leaguesshow', {
         url: '/leagues/:leagueId',
-        templateUrl: 'home/leagueaddbowler.view.html',
-        controller: 'LeagueDetailsController',
+        templateUrl: 'home/leagueshow.view.html',
+        controller: 'LeagueController',
         controllerAs: 'vm'
       })
-      // .state('leaguesshow', {
-      //   url: '/leagues/:leagueId',
-      //   templateUrl: 'home/leagueshow.view.html',
-      //   controller: 'LeagueController',
-      //   controllerAs: 'vm'
-      // })
 
   }
 
