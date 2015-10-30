@@ -37,8 +37,8 @@
 					});
 			}
 
-			function TicketRecordWinner(leagueId, lotteryId, callback){
-				$http.get('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
+			function TicketRecordWinner(leagueId, lotteryId, pins, callback){
+				$http.put('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll', {pin_count: pins})
 					.then(function successCallback(response){
 						callback(response)
 					});

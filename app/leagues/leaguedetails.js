@@ -8,28 +8,28 @@
 		LeagueDetailsController.$inject = ['LotteriesService', 'LeaguesService', 'FlashService', '$stateParams', '$location'];
 		function LeagueDetailsController(LotteriesService, LeaguesService, FlashService, $stateParams, $location){
 			var vm = this;
-			vm.LeagueBowlerAdd = LeagueBowlerAdd;
+			vm.leagueBowlerAdd = leagueBowlerAdd;
 			vm.selectedLeague;
 			vm.leagueBowlers;
 			vm.leagueLotteries;
-			LeagueShow($stateParams.leagueId);
-			LeaguesBowlers($stateParams.leagueId);
-			LeagueLotteries($stateParams.leagueId);
+			leagueShow($stateParams.leagueId);
+			leaguesBowlers($stateParams.leagueId);
+			leagueLotteries($stateParams.leagueId);
 
 
-			function LeagueShow(leagueId){
+			function leagueShow(leagueId){
 				LeaguesService.LeaguesShow(leagueId, function(response){
 					vm.selectedLeague = response.data
 				});
 			}
 
-			function LeaguesBowlers(leagueId){
+			function leaguesBowlers(leagueId){
 				LeaguesService.LeaguesBowlers(leagueId, function(response){
 					vm.leagueBowlers = response.data
 				});
 			}
 
-			function LeagueBowlerAdd(leagueId, bowlerId, bowlerName){
+			function leagueBowlerAdd(leagueId, bowlerId, bowlerName){
 				LeaguesService.LeaguesAddBowler(leagueId, bowlerId, function(response){
 					if (response.status === 200){
 						LeaguesBowlers(leagueId);
@@ -39,7 +39,7 @@
 				});
 			}
 
-			function LeagueLotteries(leagueId){
+			function leagueLotteries(leagueId){
 				LotteriesService.LotteriesLeagues(leagueId, function(response){
 					vm.leagueLotteries = response.data
 				});

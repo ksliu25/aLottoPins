@@ -6,6 +6,7 @@
     .module('myApp', [
       'ngCookies',
       'ngRoute',
+      'ngAnimate',
       'ui.router',
       'myApp.version'
     ])
@@ -37,37 +38,37 @@
       })
       .state('bowlersadd', {
         url: '/bowlers/add',
-        templateUrl: 'home/bowleradd.view.html',
+        templateUrl: 'bowlers/bowleradd.view.html',
         controller: 'BowlerController',
         controllerAs: 'vm'
       })
       .state('bowlersshow', {
         url: '/bowlers/:bowlerId',
-        templateUrl: 'home/bowlershow.view.html',
+        templateUrl: 'bowlers/bowlershow.view.html',
         controller: 'BowlerController',
         controllerAs: 'vm'
       })
       .state('leagues', {
         url: '/leagues',
-        templateUrl: 'home/home.view.html',
+        templateUrl: 'leagues/home.view.html',
         controller: 'LeagueController',
         controllerAs: 'vm'
       })
       .state('leaguesadd', {
         url: '/leagues/add',
-        templateUrl: 'home/leagueadd.view.html',
+        templateUrl: 'leagues/leagueadd.view.html',
         controller: 'LeagueController',
         controllerAs: 'vm'
       })
       .state('leaguesshow', {
         url: '/leagues/:leagueId',
-        templateUrl: 'home/leagueshow.view.html',
+        templateUrl: 'leagues/leagueshow.view.html',
         controller: 'LeagueDetailsController',
         controllerAs: 'vm'
       })
       .state('lotteriesshow', {
         url: '/leagues/:leagueId/lotteries/:lotteryId',
-        templateUrl: 'home/lotteryshow.view.html',
+        templateUrl: 'lotteries/lotteryshow.view.html',
         controller: 'LotteryDetailsController',
         controllerAs: 'vm'
       })
