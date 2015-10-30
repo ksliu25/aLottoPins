@@ -12,19 +12,13 @@
 		service.Create = Create;
 		return service;
 
-		function Create(user) {
-			return $http.post('http://bowling-api.nextcapital.com/api/users', user).then(handleSuccess, handleError('Error creating user'));
+		function Create(user, callback) {
+			$http.post('http://bowling-api.nextcapital.com/api/users', user)
+				.then(function(response){
+					callback(response);
+				});
 		}
 
-		function handleSuccess(response) {
-			return response.data
-		}
-
-		function handleError(error){
-			return function(){
-				return { success: false, message: error};
-			};
-		}
 	}
 
 })();

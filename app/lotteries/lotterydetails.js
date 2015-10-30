@@ -48,7 +48,7 @@
 			function recordTicket(leagueId, lotteryId, pincount){
 				TicketsService.TicketRecordWinner(leagueId, lotteryId, pincount, function(response){
 					if (response.status === 200){
-						FlashService.Success('Nice! You got a payout of ' response.data.payout)
+						FlashService.Success('Nice! You got a payout of ' + response.data.payout)
 						getTickets(leagueId, lotteryId)
 					}
 				});

@@ -3,7 +3,7 @@
     <a ui-sref="bowlersadd"><h4>Add New Bowler</h4></a>
     <h3> Number of bowlers: {{ vm.bowlers.length }}</h3>
     <ul class="bowlerslist">
-        <li ng-repeat='bowler in vm.bowlers'>
+        <li ng-repeat="bowler in vm.bowlers" class="item-listing">
             <a ui-sref="bowlersshow({bowlerId: bowler.id})">{{ bowler.name }}</a>
         </li>    
     </ul>
@@ -14,7 +14,7 @@
     <a ui-sref="leaguesadd"><h4>Add New League</h4></a>
     <h3> Number of leagues: {{ vm.leagues.length }}</h3>
     <ul class="leagueslist">
-        <li ng-repeat='league in vm.leagues'>
+        <li ng-repeat="league in vm.leagues" class="item-listing">
             <a ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
         </li>    
     </ul>

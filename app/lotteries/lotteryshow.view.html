@@ -5,7 +5,7 @@
 <div class="col-md-3 col-md-offset-1">
 	<h2>Tickets</h2>
 	<ul class="lotterytickets">
-		<li ng-repeat="ticket in vm.lotteryTickets">
+		<li ng-repeat="ticket in vm.lotteryTickets" class="item-listing">
 			Price: {{ ticket.price }}
 		</li>
 	</ul>
@@ -15,7 +15,7 @@
 <div ng-controller="LeagueDetailsController as LDC" class="bowlersleagues col-md-3 col-md-offset-1">
 		<h2>Buy a ticket for this lottery for which bowler in the league?</h2>
     <ul class="leagueslist">
-        <li ng-repeat='bowler in LDC.leagueBowlers'>
+        <li ng-repeat='bowler in LDC.leagueBowlers' class="item-listing">
         		{{ bowler.name }}
         		<button ng-click="vm.buyTicket(vm.selectedLottery.league_id, vm.selectedLottery.id, bowler.id, bowler.name)">
         				Buy Ticket

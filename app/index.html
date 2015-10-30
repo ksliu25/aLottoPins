@@ -41,7 +41,7 @@
   <![endif]-->
   
   <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-  <div ui-view></div>
+  <div ui-view class="view-frame"></div>
 
   <div>Angular seed app: v<span app-version></span></div>
 
