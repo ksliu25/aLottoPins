@@ -65,6 +65,12 @@
         controller: 'LeagueDetailsController',
         controllerAs: 'vm'
       })
+      .state('lotteriesshow', {
+        url: '/leagues/:leagueId/lotteries/:lotteryId',
+        templateUrl: 'home/lotteryshow.view.html',
+        controller: 'LotteryDetailsController',
+        controllerAs: 'vm'
+      })
 
   }
 

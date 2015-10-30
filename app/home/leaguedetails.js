@@ -5,19 +5,17 @@
 		.module('myApp')
 		.controller('LeagueDetailsController', LeagueDetailsController);
 
-		LeagueDetailsController.$inject = ['LeaguesService', 'FlashService', '$stateParams', '$location'];
-		function LeagueDetailsController(LeaguesService, FlashService, $stateParams, $location){
+		LeagueDetailsController.$inject = ['LotteriesService', 'LeaguesService', 'FlashService', '$stateParams', '$location'];
+		function LeagueDetailsController(LotteriesService, LeaguesService, FlashService, $stateParams, $location){
 			var vm = this;
 			vm.LeagueBowlerAdd = LeagueBowlerAdd;
 			vm.selectedLeague;
-			vm.leaguebowlers;
+			vm.leagueBowlers;
+			vm.leagueLotteries;
 			LeagueShow($stateParams.leagueId);
 			LeaguesBowlers($stateParams.leagueId);
+			LeagueLotteries($stateParams.leagueId);
 
-			// vm.LeagueShow = LeagueShow;
-			// vm.leagues;
-			// vm.currentLeague;
-			// LeaguesIndex();
 
 			function LeagueShow(leagueId){
 				LeaguesService.LeaguesShow(leagueId, function(response){
@@ -27,7 +25,7 @@
 
 			function LeaguesBowlers(leagueId){
 				LeaguesService.LeaguesBowlers(leagueId, function(response){
-					vm.leaguebowlers = response.data
+					vm.leagueBowlers = response.data
 				});
 			}
 
@@ -38,6 +36,12 @@
 						FlashService.Success('Bowler '+ bowlerName +' has been successfully added!', true);
 						$location.path('/');
 					}
+				});
+			}
+
+			function LeagueLotteries(leagueId){
+				LotteriesService.LotteriesLeagues(leagueId, function(response){
+					vm.leagueLotteries = response.data
 				});
 			}
 

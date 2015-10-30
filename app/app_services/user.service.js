@@ -16,8 +16,8 @@
 			return $http.post('http://bowling-api.nextcapital.com/api/users', user).then(handleSuccess, handleError('Error creating user'));
 		}
 
-		function handleSuccess(res) {
-			return res.data
+		function handleSuccess(response) {
+			return response.data
 		}
 
 		function handleError(error){
