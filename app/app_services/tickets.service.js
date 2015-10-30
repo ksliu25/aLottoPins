@@ -17,34 +17,34 @@
 			return service;
 
 			function TicketLotteryBuy(leagueId, lotteryId, bowlerId, callback){
-				$http.post('/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/tickets', {bowler_id: bowlerId})
+				$http.post('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/tickets', {bowler_id: bowlerId})
 					.then(function successCallback(response){
-						callback(response);
+						callback(response)
 					});
 			}
 
 			function Tickets(leagueId, lotteryId, callback){
-				$http.get('/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/tickets')
+				$http.get('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/tickets')
 					.then(function successCallback(response){
-						callback(response);
+						callback(response)
 					});
 			}
 
 			function TicketDrawWinner(leagueId, lotteryId, callback){
-				$http.get('/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
+				$http.get('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
 					.then(function successCallback(response){
-						callback(response);
+						callback(response)
 					});
 			}
 
 			function TicketRecordWinner(leagueId, lotteryId, callback){
-				$http.get('/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
+				$http.get('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
 					.then(function successCallback(response){
-						callback(response);
+						callback(response)
 					});
 			}
 
-		}
+		};
 
 
 })();
