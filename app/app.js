@@ -6,6 +6,7 @@
     .module('myApp', [
       'ngCookies',
       'ngRoute',
+      'ngAnimate',
       'ui.router',
       'myApp.version'
     ])
