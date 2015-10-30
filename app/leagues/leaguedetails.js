@@ -32,7 +32,7 @@
 			function leagueBowlerAdd(leagueId, bowlerId, bowlerName){
 				LeaguesService.LeaguesAddBowler(leagueId, bowlerId, function(response){
 					if (response.status === 200){
-						LeaguesBowlers(leagueId);
+						leaguesBowlers(leagueId);
 						FlashService.Success('Bowler '+ bowlerName +' has been successfully added!', true);
 						$location.path('/');
 					}
