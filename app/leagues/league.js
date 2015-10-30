@@ -8,22 +8,22 @@
 		LeagueController.$inject = ['LeaguesService', 'FlashService', '$location'];
 		function LeagueController(LeaguesService, FlashService, $location){
 			var vm = this;
-			vm.LeaguesAdd = LeaguesAdd;
+			vm.leaguesAdd = leaguesAdd;
 			vm.leagues;
 			vm.currentLeague;
-			LeaguesIndex();
+			leaguesIndex();
 
-			function LeaguesAdd(name){
+			function leaguesAdd(name){
 				LeaguesService.LeaguesCreate(vm.name, function(response){
 					if (response.status === 200){
-						LeaguesIndex();
+						leaguesIndex();
 						FlashService.Success(vm.name + ' has been successfully created!', true);
 						$location.path('/');
 					}
 				})
 			}
 
-			function LeaguesIndex(){
+			function leaguesIndex(){
 				LeaguesService.LeaguesIndex(function(response){
 					vm.leagues = response.data
 				});

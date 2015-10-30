@@ -38,7 +38,7 @@
 			}
 
 			function TicketRecordWinner(leagueId, lotteryId, callback){
-				$http.get('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
+				$http.put('http://bowling-api.nextcapital.com/api/leagues/'+leagueId+'/lotteries/'+lotteryId+'/roll')
 					.then(function successCallback(response){
 						callback(response)
 					});

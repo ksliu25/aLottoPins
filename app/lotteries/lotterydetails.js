@@ -9,20 +9,20 @@
 		function LotteryDetailsController(TicketsService, LeaguesService, LotteriesService, FlashService, $stateParams, $location){
 			var vm = this;
 
-			vm.BuyTicket = BuyTicket;
+			vm.buyTicket = buyTicket;
 			vm.selectedLottery;
 			vm.lotteryTickets;
-			LotteryShow($stateParams.leagueId, $stateParams.lotteryId);
+			lotteryShow($stateParams.leagueId, $stateParams.lotteryId);
 			getTickets($stateParams.leagueId, $stateParams.lotteryId);
 
 
-			function LotteryShow(leagueId, lotteryId){
+			function lotteryShow(leagueId, lotteryId){
 				LotteriesService.LotteriesShow(leagueId, lotteryId, function(response){
 					vm.selectedLottery = response.data;
 				});
 			}
 
-			function BuyTicket(leagueId, lotteryId, bowlerId, bowlerName){
+			function buyTicket(leagueId, lotteryId, bowlerId, bowlerName){
 				TicketsService.TicketLotteryBuy(leagueId, lotteryId, bowlerId, function(response){
 					if (response.status === 200){
 						FlashService.Success('Ticket bought for '+ bowlerName +'!', true);
