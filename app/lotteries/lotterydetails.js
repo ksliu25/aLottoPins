@@ -5,8 +5,8 @@
 		.module('myApp')
 		.controller('LotteryDetailsController', LotteryDetailsController);
 
-		LotteryDetailsController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$location'];
-		function LotteryDetailsController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $location){
+		LotteryDetailsController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$state'];
+		function LotteryDetailsController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $state){
 			var vm = this;
 
 			vm.buyTicket = buyTicket;
@@ -27,7 +27,7 @@
 			function buyTicket(leagueId, lotteryId, bowlerId, bowlerName){
 				TicketsService.TicketLotteryBuy(leagueId, lotteryId, bowlerId, function(response){
 					if (response.status === 200){
-						FlashService.Success('Ticket bought for '+ bowlerName +'!', true);
+						FlashService.Success('Ticket bought for '+ bowlerName +'!', false);
 						getTickets(leagueId, lotteryId)
 					}
 				});
@@ -48,7 +48,7 @@
 			function recordTicket(leagueId, lotteryId, pincount){
 				TicketsService.TicketRecordWinner(leagueId, lotteryId, pincount, function(response){
 					if (response.status === 200){
-						FlashService.Success('Nice! You got a payout of ' + response.data.payout)
+						FlashService.Success('Nice! You got a payout of ' + response.data.payout, true)
 						getTickets(leagueId, lotteryId)
 					}
 				});

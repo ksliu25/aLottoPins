@@ -5,8 +5,8 @@
 		.module('myApp')
 		.controller('LeagueController', LeagueController);
 
-		LeagueController.$inject = ['LeaguesService', 'FlashService', '$location'];
-		function LeagueController(LeaguesService, FlashService, $location){
+		LeagueController.$inject = ['LeaguesService', 'FlashService', '$state'];
+		function LeagueController(LeaguesService, FlashService, $state){
 			var vm = this;
 			vm.leaguesAdd = leaguesAdd;
 			vm.leagues;
@@ -18,7 +18,7 @@
 					if (response.status === 200){
 						leaguesIndex();
 						FlashService.Success(vm.name + ' has been successfully created!', true);
-						$location.path('/');
+						$state.go('home');
 					}
 				})
 			}

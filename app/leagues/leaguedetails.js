@@ -5,8 +5,8 @@
 		.module('myApp')
 		.controller('LeagueDetailsController', LeagueDetailsController);
 
-		LeagueDetailsController.$inject = ['LotteriesService', 'LeaguesService', 'FlashService', '$stateParams', '$location'];
-		function LeagueDetailsController(LotteriesService, LeaguesService, FlashService, $stateParams, $location){
+		LeagueDetailsController.$inject = ['LotteriesService', 'LeaguesService', 'FlashService', '$stateParams', '$state'];
+		function LeagueDetailsController(LotteriesService, LeaguesService, FlashService, $stateParams, $state){
 			var vm = this;
 			vm.leagueBowlerAdd = leagueBowlerAdd;
 			vm.selectedLeague;
@@ -33,8 +33,7 @@
 				LeaguesService.LeaguesAddBowler(leagueId, bowlerId, function(response){
 					if (response.status === 200){
 						leaguesBowlers(leagueId);
-						FlashService.Success('Bowler '+ bowlerName +' has been successfully added!', true);
-						$location.path('/');
+						FlashService.Success('Bowler '+ bowlerName +' has been successfully added!', false);
 					}
 				});
 			}

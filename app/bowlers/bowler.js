@@ -5,8 +5,8 @@
 		.module('myApp')
 		.controller('BowlerController', BowlerController);
 
-		BowlerController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$location'];
-		function BowlerController(BowlersService, FlashService, $stateParams, $location){
+		BowlerController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$state']
+		function BowlerController(BowlersService, FlashService, $stateParams, $state){ 
 			var vm = this;
 			vm.bowlersAdd = bowlersAdd;
 			vm.bowlerShow = bowlerShow;
@@ -20,7 +20,7 @@
 					if (response.status === 200){
 						bowlersIndex();
 						FlashService.Success(vm.name + ' has been successfully created!', true);
-						$location.path('/');
+						$state.go('home');
 					}
 				})
 			}
