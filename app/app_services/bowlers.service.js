@@ -31,7 +31,7 @@
 			}
 
 			function BowlersShow(bowlerId, callback){
-				$http.get('http://bowling-api.nextcapital.com/api/bowlers' + bowlerId)
+				$http.get('http://bowling-api.nextcapital.com/api/bowlers/' + bowlerId)
 					.then(function successCallback(response){
 						callback(response);
 					});

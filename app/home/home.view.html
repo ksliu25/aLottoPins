@@ -1,14 +1,3 @@
-<div ng-controller="BowlerController as vm" class="bowlers col-md-4 col-md-offset-1">
-    <h2>Bowlers</h2>
-    <a ui-sref="bowlersadd"><h4>Add New Bowler</h4></a>
-    <h3> Number of bowlers: {{ vm.bowlers.length }}</h3>
-    <ul class="bowlerslist">
-        <li ng-repeat="bowler in vm.bowlers" class="item-listing">
-            <a ui-sref="bowlersshow({bowlerId: bowler.id})">{{ bowler.name }}</a>
-        </li>    
-    </ul>
-</div>
-
 <div ng-controller="LeagueController as vm" class="leagues col-md-4 col-md-offset-1">
     <h2>Leagues</h2>
     <a ui-sref="leaguesadd"><h4>Add New League</h4></a>
@@ -18,5 +7,15 @@
             <a ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
         </li>    
     </ul>
+</div>
 
+<div ng-controller="BowlerController as vm" class="bowlers col-md-4 col-md-offset-1">
+    <h2>Bowlers</h2>
+    <a ui-sref="bowlersadd"><h4>Add New Bowler</h4></a>
+    <h3> Number of bowlers: {{ vm.bowlers.length }}</h3>
+    <ul class="bowlerslist">
+        <li ng-repeat="bowler in vm.bowlers" class="item-listing">
+            <a ui-sref="bowlersshow({bowlerId: bowler.id})">{{ bowler.name }}</a>
+        </li>    
+    </ul>
 </div>

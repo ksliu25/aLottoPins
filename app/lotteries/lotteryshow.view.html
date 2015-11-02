@@ -3,6 +3,12 @@
 </div>
 
 <div class="col-md-3 col-md-offset-1">
+	<a ui-sref="lotteriesshow.winner({leagueId: vm.selectedLottery.league_id, lotteryId: vm.selectedLottery.id})"><button ng-click="vm.drawTicket(vm.selectedLottery.league_id, vm.selectedLottery.id)">Draw a ticket!</button></a>
+	<div ui-view></div>
+</div>
+
+
+<div class="col-md-3 col-md-offset-1">
 	<h2>Tickets</h2>
 	<ul class="lotterytickets">
 		<li ng-repeat="ticket in vm.lotteryTickets" class="item-listing">
@@ -24,8 +30,5 @@
     </ul>
 </div>
 
-<div class="col-md-3 col-md-offset-1">
-	<h2>Draw a ticket! Also record here, form for pins below:</h2>
-</div>
 
 

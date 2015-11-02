@@ -1,3 +1,24 @@
+<div class="lotteriesleagues col-md-3 col-md-offset-1">
+    <h1 ng-show"vm.leagueLotteries">Lotteries in this league</h1>
+    <h2>Lottery balances in this league:</h2>
+    <ul class="lotterieslist">
+        <li ng-repeat='lottery in vm.leagueLotteries'>
+                <a ui-sref="lotteriesshow({leagueId: vm.selectedLeague.id, lotteryId: lottery.id})">{{ lottery.balance | currency }}</a>
+        </li>    
+    </ul>
+
+</div>
+
+<div class="bowlersleagues col-md-3 col-md-offset-1">
+    <h2>Bowlers in this league:</h2>
+    <ul class="leagueslist">
+        <li ng-repeat='bowler in vm.leagueBowlers'>
+                {{ bowler.name}}
+        </li>    
+    </ul>
+
+</div>
+
 
 <div ng-controller="BowlerController as bowlerCtrl" class="bowlers col-md-3 col-md-offset-1">
 <h1 ng-show="vm.selectedLeague">Add Bowlers to {{ vm.selectedLeague.name }}</h1>
@@ -11,25 +32,4 @@
         		</button>
         </li>    
     </ul>
-</div>
-
-<div class="bowlersleagues col-md-3 col-md-offset-1">
-    <h2>Bowlers in this league:</h2>
-    <ul class="leagueslist">
-        <li ng-repeat='bowler in vm.leagueBowlers'>
-        		{{ bowler.name}}
-        </li>    
-    </ul>
-
-</div>
-
-<div class="lotteriesleagues col-md-3 col-md-offset-1">
-    <h1 ng-show"vm.leagueLotteries">Lotteries in this league</h1>
-    <h2>Lottery balances in this league:</h2>
-    <ul class="lotterieslist">
-        <li ng-repeat='lottery in vm.leagueLotteries'>
-                <a ui-sref="lotteriesshow({leagueId: vm.selectedLeague.id, lotteryId: lottery.id})">{{ lottery.balance | currency }}</a>
-        </li>    
-    </ul>
-
 </div>
