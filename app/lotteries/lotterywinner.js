@@ -10,13 +10,22 @@
 			var vm = this;
 
 			// vm.buyTicket = buyTicket;
+			vm.recordTicket = recordTicket;
 			vm.drawTicket = drawTicket;
+			vm.selectedLottery;
 			vm.winner;
 			vm.drawnTicket;
 
 			(function initController(){
 				drawTicket($stateParams.leagueId, $stateParams.lotteryId)
+				lotteryShow($stateParams.leagueId, $stateParams.lotteryId)
 			})();
+
+			function lotteryShow(leagueId, lotteryId){
+				LotteriesService.LotteriesShow(leagueId, lotteryId, function(response){
+					vm.selectedLottery = response.data;
+				});
+			}
 
 			function drawTicket(leagueId, lotteryId){
 				TicketsService.TicketDrawWinner(leagueId, lotteryId, function(response){
