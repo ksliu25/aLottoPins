@@ -10,11 +10,11 @@
 			var vm = this;
 
 			vm.buyTicket = buyTicket;
-			vm.drawTicket = drawTicket;
+			// vm.drawTicket = drawTicket;
 			vm.selectedLottery;
 			vm.lotteryTickets;
-			vm.winner;
-			vm.drawnTicket;
+			// vm.winner;
+			// vm.drawnTicket;
 			lotteryShow($stateParams.leagueId, $stateParams.lotteryId);
 			getTickets($stateParams.leagueId, $stateParams.lotteryId);
 
@@ -40,28 +40,28 @@
 				});
 			}
 
-			function drawTicket(leagueId, lotteryId){
-				TicketsService.TicketDrawWinner(leagueId, lotteryId, function(response){
-					vm.drawnTicket = response.data;
-					findBowler(response.data.bowler_id);
-				});
-			}
+			// function drawTicket(leagueId, lotteryId){
+			// 	TicketsService.TicketDrawWinner(leagueId, lotteryId, function(response){
+			// 		vm.drawnTicket = response.data;
+			// 		findBowler(response.data.bowler_id);
+			// 	});
+			// }
 
-			function recordTicket(leagueId, lotteryId){
-				TicketsService.TicketRecordWinner(leagueId, lotteryId, vm.winningTicket, function(response){
-					if (response.status === 200){
-						FlashService.Success('Nice! You got a payout of ' + response.data.payout, true)
-						getTickets(leagueId, lotteryId)
-						$state.go('lotteriesshow', {leagueId: leagueId, lotteryId: lotteryId})
-					}
-				});
-			}
+			// function recordTicket(leagueId, lotteryId){
+			// 	TicketsService.TicketRecordWinner(leagueId, lotteryId, vm.winningTicket, function(response){
+			// 		if (response.status === 200){
+			// 			FlashService.Success('Nice! You got a payout of ' + response.data.payout, true)
+			// 			getTickets(leagueId, lotteryId)
+			// 			$state.go('lotteriesshow', {leagueId: leagueId, lotteryId: lotteryId})
+			// 		}
+			// 	});
+			// }
 
-			function findBowler(bowlerId){
-				BowlersService.BowlersShow(bowlerId, function(response){
-					vm.winner = response.data
-				});
-			}
+			// function findBowler(bowlerId){
+			// 	BowlersService.BowlersShow(bowlerId, function(response){
+			// 		vm.winner = response.data
+			// 	});
+			// }
 
 		}
 

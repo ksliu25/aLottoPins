@@ -11,7 +11,6 @@
 
 			// vm.buyTicket = buyTicket;
 			vm.drawTicket = drawTicket;
-			vm.selectedLottery;
 			vm.winner;
 			vm.drawnTicket;
 
