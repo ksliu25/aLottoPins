@@ -41,9 +41,7 @@
   <![endif]-->
   
   <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-  <div ui-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
+  <div ui-view class="view-frame"></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -55,6 +53,8 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="app.js"></script>
   <script src="app_services/flash.service.js"></script>
   <script src="app_services/user.service.js"></script>
@@ -69,8 +69,10 @@
   <script src="bowlers/bowler.js"></script>
   <script src="bowlers/bowlerdetails.js"></script>
   <script src="leagues/league.js"></script>
+  <script src="leagues/leagueadd.js"></script>
   <script src="leagues/leaguedetails.js"></script>
   <script src="lotteries/lotterydetails.js"></script>
+  <script src="lotteries/lotterywinner.js"></script>
 
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

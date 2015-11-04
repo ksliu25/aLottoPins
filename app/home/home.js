@@ -9,8 +9,6 @@
 		function HomeController(BowlersService, FlashService, $routeParams){
 			var vm = this;
 
-
-
 		}
 
 

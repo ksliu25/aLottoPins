@@ -8,6 +8,7 @@
       'ngRoute',
       'ngAnimate',
       'ui.router',
+      'ui.bootstrap',
       'myApp.version'
     ])
     .config(config)
@@ -70,6 +71,12 @@
         url: '/leagues/:leagueId/lotteries/:lotteryId',
         templateUrl: 'lotteries/lotteryshow.view.html',
         controller: 'LotteryDetailsController',
+        controllerAs: 'vm'
+      })
+      .state('lotteriesshow.winner', {
+        url: '/leagues/:leagueId/lotteries/:lotteryId/roll',
+        templateUrl: 'lotteries/lotterywinner.view.html',
+        controller: 'LotteryWinnerController',
         controllerAs: 'vm'
       })
 
