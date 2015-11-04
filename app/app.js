@@ -6,8 +6,8 @@
     .module('myApp', [
       'ngCookies',
       'ngRoute',
-      'ngAnimate',
       'ui.router',
+      'ui.bootstrap',
       'myApp.version'
     ])
     .config(config)
