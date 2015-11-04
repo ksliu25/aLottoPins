@@ -8,6 +8,7 @@
 		BowlerAddController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$state', '$uibModalInstance'];
 		function BowlerAddController(BowlersService, FlashService, $stateParams, $state, $uibModalInstance){
 			var vm = this;
+			vm.cancel = cancel;
 			vm.bowlersAdd = bowlersAdd;
 
 			function bowlersAdd(name){
@@ -17,6 +18,10 @@
 					}
 				})
 			}
+
+			function cancel() {
+			   $uibModalInstance.dismiss();
+			};
 
 		}
 

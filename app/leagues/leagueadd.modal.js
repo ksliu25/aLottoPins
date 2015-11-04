@@ -8,6 +8,7 @@
 		LeagueAddController.$inject = ['LeaguesService', 'FlashService', '$state', '$uibModalInstance'];
 		function LeagueAddController(LeaguesService, FlashService, $state, $uibModalInstance){
 			var vm = this;
+			vm.cancel = cancel;
 			vm.leaguesAdd = leaguesAdd;
 
 			function leaguesAdd(name){
@@ -16,7 +17,12 @@
 						$uibModalInstance.close(vm.name);
 					}
 				})
+			};
+
+			function cancel(){
+			   $uibModalInstance.dismiss();
 			}
+
 
 		}
 

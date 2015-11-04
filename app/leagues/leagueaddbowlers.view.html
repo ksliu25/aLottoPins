@@ -1,15 +1,10 @@
 <div class="modal-header">
-	<h1 ng-show="vm.selectedLeague">Add Bowlers to {{ vm.selectedLeague.name }}</h1>
-	<h2>All Bowlers</h2>
+		<h1 ng-show="vm.selectedLeague">Add which bowler to {{ vm.selectedLeague.name }}?</h1>
 </div>
 <div class="modal-body">
-	<h3> Number of bowlers: {{ vm.allBowlers.length }}</h3>
-  <ul class="bowlerslist">
-      <li ng-repeat='bowler in vm.allBowlers'>
-      		{{ bowler.name }}
-     	    <button ng-click="vm.leagueBowlerAdd(vm.selectedLeague.id, bowler.id, bowler.name)">
-         		        Add this bowler
-      		</button>
-      </li>    
-  </ul>
+    <div ng-repeat='bowler in vm.allBowlers' ng-click="vm.leagueBowlerAdd(vm.selectedLeague.id, bowler.id, bowler.name)">
+    		<a href="#">{{ bowler.name }}</a>
+    </div>    
+		<br>
+		<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
 </div>

@@ -33,7 +33,7 @@
 				LotteriesService.LotteriesLeagues(leagueId, function(response){
 					vm.leagueLotteries = response.data
 				});
-			}
+			};
 
 
 			function open(size){
@@ -58,7 +58,6 @@
 
 			};
 
-
-		}
+		};
 
 })();
