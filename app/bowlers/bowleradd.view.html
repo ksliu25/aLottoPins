@@ -1,5 +1,7 @@
-<div class="addbowler col-md-4 col-md-offset-1">
+<div class="modal-header">
     <h2>Add Bowler</h2>
+</div>
+<div class="modal-body">
     <form name="form" ng-submit="vm.bowlersAdd()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
             <label for="name">Name</label>

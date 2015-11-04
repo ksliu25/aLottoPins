@@ -5,25 +5,26 @@
 		.module('myApp')
 		.controller('BowlerController', BowlerController);
 
-		BowlerController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$state']
-		function BowlerController(BowlersService, FlashService, $stateParams, $state){ 
+		BowlerController.$inject = ['BowlersService', 'FlashService', '$stateParams', '$state', '$uibModal']
+		function BowlerController(BowlersService, FlashService, $stateParams, $state, $uibModal){ 
 			var vm = this;
-			vm.bowlersAdd = bowlersAdd;
-			vm.bowlerShow = bowlerShow;
-			vm.bowlerId = $stateParams.bowlerId
+			vm.open = open;
+			// vm.bowlersAdd = bowlersAdd;
+			// vm.bowlerShow = bowlerShow;
+			// vm.bowlerId = $stateParams.bowlerId
 			vm.bowlers;
-			vm.currentBowler;
+			// vm.currentBowler;
 			bowlersIndex();
 
-			function bowlersAdd(name){
-				BowlersService.BowlersCreate(vm.name, function(response){
-					if (response.status === 200){
-						bowlersIndex();
-						FlashService.Success(vm.name + ' has been successfully created!', true);
-						$state.go('home');
-					}
-				})
-			}
+			// function bowlersAdd(name){
+			// 	BowlersService.BowlersCreate(vm.name, function(response){
+			// 		if (response.status === 200){
+			// 			bowlersIndex();
+			// 			FlashService.Success(vm.name + ' has been successfully created!', true);
+			// 			$state.go('home');
+			// 		}
+			// 	})
+			// }
 
 			function bowlersIndex(){
 				BowlersService.BowlersIndex(function(response){
@@ -31,12 +32,30 @@
 				});
 			}
 
+			function open(size){
 
-			function bowlerShow(bowlerId){
-				BowlersService.BowlersShow(bowlerId, function(response){
-					vm.currentBowler = response.data
+				var modalInstance = $uibModal.open({
+					animation: true,
+					templateUrl: 'bowlers/bowleradd.view.html',
+					controller: 'BowlerAddController',
+					controllerAs: 'vm',
+					size: size
+				})
+
+				modalInstance.result.then(function successCallback(name) {
+					bowlersIndex();
+					FlashService.Success(name + ' has been successfully created!', true);
+					$state.go('home');
 				});
-			}
+
+			};
+
+
+			// function bowlerShow(bowlerId){
+			// 	BowlersService.BowlersShow(bowlerId, function(response){
+			// 		vm.currentBowler = response.data
+			// 	});
+			// }
 
 
 		}
