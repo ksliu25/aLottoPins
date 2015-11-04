@@ -5,10 +5,10 @@
 		.module('myApp')
 		.controller('LeagueDetailsController', LeagueDetailsController);
 
-		LeagueDetailsController.$inject = ['LotteriesService', 'LeaguesService', 'FlashService', '$stateParams', '$state'];
-		function LeagueDetailsController(LotteriesService, LeaguesService, FlashService, $stateParams, $state){
+		LeagueDetailsController.$inject = ['LotteriesService', 'LeaguesService', 'FlashService', '$stateParams', '$state', '$uibModal'];
+		function LeagueDetailsController(LotteriesService, LeaguesService, FlashService, $stateParams, $state, $uibModal){
 			var vm = this;
-			vm.leagueBowlerAdd = leagueBowlerAdd;
+			vm.open = open;
 			vm.selectedLeague;
 			vm.leagueBowlers;
 			vm.leagueLotteries;
@@ -29,20 +29,34 @@
 				});
 			}
 
-			function leagueBowlerAdd(leagueId, bowlerId, bowlerName){
-				LeaguesService.LeaguesAddBowler(leagueId, bowlerId, function(response){
-					if (response.status === 200){
-						leaguesBowlers(leagueId);
-						FlashService.Success('Bowler '+ bowlerName +' has been successfully added!', false);
-					}
-				});
-			}
-
 			function leagueLotteries(leagueId){
 				LotteriesService.LotteriesLeagues(leagueId, function(response){
 					vm.leagueLotteries = response.data
 				});
 			}
+
+
+			function open(size){
+
+				var modalInstance = $uibModal.open({
+					animation: true,
+					templateUrl: 'leagues/leagueaddbowlers.view.html',
+					controller: 'LeagueAddBowlersController',
+					controllerAs: 'vm',
+					size: size,
+					resolve: {
+						selectedLeague: function(){
+							return vm.selectedLeague
+						} 
+					}
+				})
+
+				modalInstance.result.then(function successCallback(bowlerName) {
+					leaguesBowlers($stateParams.leagueId);
+					FlashService.Success('Bowler '+ bowlerName +' has been successfully added!', false);
+				});
+
+			};
 
 
 		}

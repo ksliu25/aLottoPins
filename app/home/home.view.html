@@ -3,7 +3,6 @@
     <div>    
         <button type="button" class="btn btn-default" ng-click="LC.open()">Add New League</button>
     </div>
-    <!-- <a ui-sref="leaguesadd"><h4>Add New League</h4></a> -->
     <h3> Number of leagues: {{ LC.leagues.length }}</h3>
     <ul class="leagueslist">
         <li ng-repeat="league in LC.leagues" class="item-listing">
@@ -17,7 +16,6 @@
     <div>    
         <button type="button" class="btn btn-default" ng-click="BC.open()">Add New Bowler</button>
     </div>
-    <!-- <a ui-sref="bowlersadd"><h4>Add New Bowler</h4></a> -->
     <h3> Number of bowlers: {{ BC.bowlers.length }}</h3>
     <ul class="bowlerslist">
         <li ng-repeat="bowler in BC.bowlers" class="item-listing">

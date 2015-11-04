@@ -9,7 +9,11 @@
 
 </div>
 
+
 <div class="bowlersleagues col-md-3 col-md-offset-1">
+    <div>    
+        <button type="button" class="btn btn-default" ng-click="vm.open()">Add Bowlers to {{ vm.selectedLeague.name }}</button>
+    </div>
     <h2>Bowlers in this league:</h2>
     <ul class="leagueslist">
         <li ng-repeat='bowler in vm.leagueBowlers'>
@@ -20,7 +24,7 @@
 </div>
 
 
-<div ng-controller="BowlerController as BC" class="bowlers col-md-3 col-md-offset-1">
+<!-- <div ng-controller="BowlerController as BC" class="bowlers col-md-3 col-md-offset-1">
 <h1 ng-show="vm.selectedLeague">Add Bowlers to {{ vm.selectedLeague.name }}</h1>
     <h2>All Bowlers</h2>
     <h3> Number of bowlers: {{ BC.bowlers.length }}</h3>
@@ -32,4 +36,4 @@
         		</button>
         </li>    
     </ul>
-</div>
+</div> -->
