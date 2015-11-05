@@ -37,30 +37,6 @@
         controller: 'RegisterController',
         controllerAs: 'vm'
       })
-      .state('bowlersadd', {
-        url: '/bowlers/add',
-        templateUrl: 'bowlers/bowleradd.view.html',
-        controller: 'BowlerController',
-        controllerAs: 'vm'
-      })
-      .state('bowlersshow', {
-        url: '/bowlers/:bowlerId',
-        templateUrl: 'bowlers/bowlershow.view.html',
-        controller: 'BowlerController',
-        controllerAs: 'vm'
-      })
-      .state('leagues', {
-        url: '/leagues',
-        templateUrl: 'leagues/home.view.html',
-        controller: 'LeagueController',
-        controllerAs: 'vm'
-      })
-      .state('leaguesadd', {
-        url: '/leagues/add',
-        templateUrl: 'leagues/leagueadd.view.html',
-        controller: 'LeagueController',
-        controllerAs: 'vm'
-      })
       .state('leaguesshow', {
         url: '/leagues/:leagueId',
         templateUrl: 'leagues/leagueshow.view.html',
