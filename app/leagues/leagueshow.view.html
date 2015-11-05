@@ -1,4 +1,4 @@
-<div class="lotteriesleagues col-md-3 col-md-offset-1">
+<div class="lotteriesleagues col-md-4 col-md-offset-1">
     <h1 ng-show"vm.leagueLotteries">Lotteries in this league</h1>
     <h2>Lottery balances in this league:</h2>
     <ul class="lotterieslist">
@@ -10,11 +10,11 @@
 </div>
 
 
-<div class="bowlersleagues col-md-3 col-md-offset-1">
+<div class="bowlersleagues col-md-4 col-md-offset-1">
     <div>    
+        <h2>Bowlers in this league</h2>
         <button type="button" class="btn btn-default" ng-click="vm.open()">Add Bowlers to {{ vm.selectedLeague.name }}</button>
     </div>
-    <h2>Bowlers in this league:</h2>
     <ul class="leagueslist">
         <li ng-repeat='bowler in vm.leagueBowlers'>
                 {{ bowler.name}}
