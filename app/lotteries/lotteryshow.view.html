@@ -2,13 +2,13 @@
 	<h2>placeholder for Lottery ID:{{ vm.selectedLottery.id }}</h2>
 </div>
 
-<div class="col-md-3 col-md-offset-1">
+<div class="col-md-4 col-md-offset-1">
 	<a ui-sref="lotteriesshow.winner({leagueId: vm.selectedLottery.league_id, lotteryId: vm.selectedLottery.id})"><button ng-click="vm.drawTicket(vm.selectedLottery.league_id, vm.selectedLottery.id)">Draw a ticket!</button></a>
 	<div ui-view></div>
 </div>
 
 
-<div class="col-md-3 col-md-offset-1">
+<div class="col-md-4 col-md-offset-1">
 	<h2>Tickets</h2>
 	<button type="button" class="btn btn-default" ng-click="vm.open()">Buy a ticket</button>
 	<ul class="lotterytickets">
@@ -18,18 +18,6 @@
 	</ul>
 </div>
 
-		
-<!-- <div ng-controller="LeagueDetailsController as LDC" class="bowlersleagues col-md-3 col-md-offset-1">
-		<h2>Buy a ticket for this lottery for which bowler in the league?</h2>
-    <ul class="leagueslist">
-        <li ng-repeat='bowler in LDC.leagueBowlers' class="item-listing">
-        		{{ bowler.name }}
-        		<button ng-click="vm.buyTicket(vm.selectedLottery.league_id, vm.selectedLottery.id, bowler.id, bowler.name)">
-        				Buy Ticket
-        		</button>
-        </li>    
-    </ul>
-</div> -->
 
 
 
