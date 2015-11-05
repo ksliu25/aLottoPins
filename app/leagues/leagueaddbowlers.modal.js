@@ -12,7 +12,11 @@
 			vm.leagueBowlerAdd = leagueBowlerAdd;
 			vm.selectedLeague = selectedLeague;
 			vm.allBowlers;
-			allBowlers();
+
+			
+			(function initController(){
+				allBowlers();
+			})();
 
 
 			function allBowlers(){

@@ -10,10 +10,12 @@
 			var vm = this;
 			vm.cancel = cancel;
 			vm.selectedLottery = selectedLottery;
-			vm.leagueBowlers;
-			getLeaguesBowlers(leagueId);
-
 			vm.buyTicket = buyTicket;
+			vm.leagueBowlers;
+
+			(function initController(){
+				getLeaguesBowlers(leagueId);
+			})();
 
 			function buyTicket(leagueId, lotteryId, bowlerId, bowlerName){
 				TicketsService.TicketLotteryBuy(leagueId, lotteryId, bowlerId, function(response){

@@ -10,7 +10,10 @@
 			var vm = this;
 			vm.open = open;
 			vm.bowlers;
-			bowlersIndex();
+
+			(function initController(){
+				bowlersIndex();
+			})();
 
 			function bowlersIndex(){
 				BowlersService.BowlersIndex(function(response){

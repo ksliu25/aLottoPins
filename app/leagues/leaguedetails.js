@@ -12,10 +12,12 @@
 			vm.selectedLeague;
 			vm.leagueBowlers;
 			vm.leagueLotteries;
-			leagueShow($stateParams.leagueId);
-			leaguesBowlers($stateParams.leagueId);
-			leagueLotteries($stateParams.leagueId);
-
+			
+			(function initController(){
+				leagueShow($stateParams.leagueId);
+				leaguesBowlers($stateParams.leagueId);
+				leagueLotteries($stateParams.leagueId);
+			})();
 
 			function leagueShow(leagueId){
 				LeaguesService.LeaguesShow(leagueId, function(response){

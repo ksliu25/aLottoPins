@@ -5,27 +5,19 @@
 		.module('myApp')
 		.controller('LotteryWinnerController', LotteryWinnerController);
 
-		LotteryWinnerController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$state'];
-		function LotteryWinnerController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $state){
+		LotteryWinnerController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$state', '$uibModalInstance', 'selectedLottery'];
+		function LotteryWinnerController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $state, $uibModalInstance, selectedLottery){
 			var vm = this;
-
-			// vm.buyTicket = buyTicket;
+			vm.cancel = cancel;
 			vm.recordTicket = recordTicket;
 			vm.drawTicket = drawTicket;
-			vm.selectedLottery;
+			vm.selectedLottery = selectedLottery;
 			vm.winner;
 			vm.drawnTicket;
 
 			(function initController(){
-				drawTicket($stateParams.leagueId, $stateParams.lotteryId)
-				lotteryShow($stateParams.leagueId, $stateParams.lotteryId)
+				drawTicket(selectedLottery.league_id, selectedLottery.id)
 			})();
-
-			function lotteryShow(leagueId, lotteryId){
-				LotteriesService.LotteriesShow(leagueId, lotteryId, function(response){
-					vm.selectedLottery = response.data;
-				});
-			}
 
 			function drawTicket(leagueId, lotteryId){
 				TicketsService.TicketDrawWinner(leagueId, lotteryId, function(response){
@@ -37,7 +29,7 @@
 			function recordTicket(leagueId, lotteryId){
 				TicketsService.TicketRecordWinner(leagueId, lotteryId, vm.winningTicket, function(response){
 					if (response.status === 200){
-						FlashService.Success('Nice! You got a payout of ' + response.data.payout, false)
+						$uibModalInstance.close(response.data);
 					}
 				});
 			}
@@ -47,6 +39,10 @@
 					vm.winner = response.data
 				});
 			}
+
+			function cancel(){
+			   $uibModalInstance.dismiss();
+			};
 
 		}
 
