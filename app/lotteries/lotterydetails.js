@@ -8,7 +8,7 @@
 		LotteryDetailsController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$state', '$uibModal'];
 		function LotteryDetailsController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $state, $uibModal){
 			var vm = this;
-			vm.open = open;
+			vm.openBuyModal = openBuyModal;
 
 			vm.selectedLottery;
 			vm.lotteryTickets;

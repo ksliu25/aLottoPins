@@ -1,5 +1,7 @@
-<h2> Congratulations, {{ vm.winner.name }}! </h2>
-<div class="recordTicket col-md-4 col-md-offset-1">
+<div class="modal-header">
+    <h2> Congratulations, {{ vm.winner.name }}! </h2>
+</div>
+<div class="modal-body">
     <h3>Record Ticket</h3>
     <form name="form" ng-submit="vm.recordTicket(vm.selectedLottery.league_id, vm.selectedLottery.id)" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.pin_count.$dirty && form.pin_count.$error.required }">
