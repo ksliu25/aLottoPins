@@ -28,7 +28,32 @@
 				});
 			};
 
-			function open(size){
+			function openBuyModal(size){
+
+				var modalInstance = $uibModal.open({
+					animation: true,
+					templateUrl: 'lotteries/lotterybuyticket.view.html',
+					controller: 'LotteryBuyTicketController',
+					controllerAs: 'vm',
+					size: size,
+					resolve: {
+						selectedLottery: function(){
+							return vm.selectedLottery
+						},
+						leagueId: function(){
+							return vm.selectedLottery.league_id
+						}
+					}
+				})
+
+				modalInstance.result.then(function successCallback(bowlerName) {
+					getTickets($stateParams.leagueId, $stateParams.lotteryId);
+					FlashService.Success('Ticket bought for '+bowlerName, false);
+				});
+
+			};
+
+			function openDrawModal(size){
 
 				var modalInstance = $uibModal.open({
 					animation: true,

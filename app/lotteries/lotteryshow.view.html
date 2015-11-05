@@ -1,21 +1,22 @@
-<div>
-	<h2>placeholder for Lottery ID:{{ vm.selectedLottery.id }}</h2>
+<div class="page-header text-center">
+	<h2>Current Jackpot!</h2>
+	<h4>Balance: {{vm.selectedLottery.balance | currency}}</h4>
 </div>
 
-<div class="col-md-4 col-md-offset-1">
+<!-- <div>
+	<h2>placeholder for Lottery ID:{{ vm.selectedLottery.id }}</h2>
+</div> -->
+
+<!-- <div class="col-md-4 col-md-offset-1">
 	<a ui-sref="lotteriesshow.winner({leagueId: vm.selectedLottery.league_id, lotteryId: vm.selectedLottery.id})"><button ng-click="vm.drawTicket(vm.selectedLottery.league_id, vm.selectedLottery.id)">Draw a ticket!</button></a>
 	<div ui-view></div>
 </div>
-
+ -->
 
 <div class="col-md-4 col-md-offset-1">
-	<h2>Tickets</h2>
-	<button type="button" class="btn btn-default" ng-click="vm.open()">Buy a ticket</button>
-	<ul class="lotterytickets">
-		<li ng-repeat="ticket in vm.lotteryTickets" class="item-listing">
-			Price: {{ ticket.price }}
-		</li>
-	</ul>
+	<h2>Number of Tickets: {{vm.lotteryTickets.length}}</h2>
+	<button type="button" class="btn btn-default" ng-click="vm.openDrawModal()">Draw a winner!</button>
+	<button type="button" class="btn btn-default" ng-click="vm.openBuyModal()">Buy a ticket?</button>
 </div>
 
 
