@@ -10,6 +10,7 @@
 
 <div class="col-md-3 col-md-offset-1">
 	<h2>Tickets</h2>
+	<button type="button" class="btn btn-default" ng-click="vm.open()">Buy a ticket</button>
 	<ul class="lotterytickets">
 		<li ng-repeat="ticket in vm.lotteryTickets" class="item-listing">
 			Price: {{ ticket.price }}
@@ -18,7 +19,7 @@
 </div>
 
 		
-<div ng-controller="LeagueDetailsController as LDC" class="bowlersleagues col-md-3 col-md-offset-1">
+<!-- <div ng-controller="LeagueDetailsController as LDC" class="bowlersleagues col-md-3 col-md-offset-1">
 		<h2>Buy a ticket for this lottery for which bowler in the league?</h2>
     <ul class="leagueslist">
         <li ng-repeat='bowler in LDC.leagueBowlers' class="item-listing">
@@ -28,7 +29,7 @@
         		</button>
         </li>    
     </ul>
-</div>
+</div> -->
 
 
 
