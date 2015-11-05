@@ -1,0 +1,11 @@
+<div class="modal-header">
+		<h2>Buy a ticket for which bowler?</h2>
+</div>
+<div class="modal-body">
+    <div ng-repeat='bowler in vm.leagueBowlers' ng-click="vm.buyTicket(vm.selectedLottery.league_id, vm.selectedLottery.id, bowler.id, bowler.name)">
+				<a href="#">{{ bowler.name }}</a>
+		</div>
+		<br>
+		<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>        	
+</div>
+

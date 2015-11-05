@@ -29,19 +29,14 @@
 					size: size
 				})
 
-				modalInstance.result.then(function successCallback() {
+				modalInstance.result.then(function successCallback(name) {
 					leaguesIndex();
-					FlashService.Success(vm.name + ' has been successfully created!', true);
+					FlashService.Success(name + ' has been successfully created!', true);
 					$state.go('home');
 				});
 
 			};
 
-
-
 		}
-
-
-
 
 })();

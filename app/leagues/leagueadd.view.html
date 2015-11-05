@@ -1,15 +1,16 @@
 <div class="modal-header">
     <h2>Add League</h2>
-    <div class="modal-body">
-        <form name="form" ng-submit="vm.leaguesAdd()" role="form">
-            <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-control" ng-model="vm.name" required />
-                <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">name is required</span>
-            </div>
-            <div class="form-actions modal-footer">
-                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Create League!</button>
-            </div>
-        </form>
-    </div>
+</div>
+<div class="modal-body">
+    <form name="form" ng-submit="vm.leaguesAdd()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control" ng-model="vm.name" required />
+            <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">name is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Create League!</button>
+            <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+        </div>
+    </form>
 </div>
