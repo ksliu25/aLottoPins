@@ -24,12 +24,15 @@
                     <a class="navbar-brand" ui-sref="home">aLottoPins</a>
                 </div>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
+                <ul class="nav navbar-nav navbar-right" ng-controller="HomeController as vm">
+                    <li ng-show="vm.$location.path() == '/login' || vm.$location.path() == '/register'">
                         <a ui-sref="login">Login</a>
                     </li>
-                    <li>
+                    <li ng-show="vm.$location.path() == '/login' || vm.$location.path() == '/register'"> 
                         <a ui-sref="register">Register</a>
+                    </li>
+                    <li ng-hide="vm.$location.path() == '/login' || vm.$location.path() == '/register'"> 
+                        <a ui-sref="login">Logout</a>
                     </li>
                 </ul>
             </div>

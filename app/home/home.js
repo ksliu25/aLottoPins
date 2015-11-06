@@ -5,16 +5,24 @@
 		.module('myApp')
 		.controller('HomeController', HomeController);
 
-		HomeController.$inject = ['$rootScope', 'BowlersService', 'FlashService', '$routeParams'];
-		function HomeController($rootScope, BowlersService, FlashService, $routeParams){
+		HomeController.$inject = ['$scope','$location','$rootScope', 'BowlersService', 'FlashService', '$routeParams', '$route'];
+		function HomeController($scope, $location, $rootScope, BowlersService, FlashService, $routeParams, $route){
 			var vm = this;
-			// vm.globals = $rootScope.globals;
-			// vm.loggedIn = true;
+			vm.$location = $location;
+			// vm.isActive = isActive;
 
-			// console.log(vm.globals);
+			// vm.items = [
+			//       {path: '/login', title: 'login'},
+			//       {path: '/register', title: 'register'},
+			//     ];
+
+			// function isActive(item){
+	  //     if (item.path == $location.path()) {
+	  //       return true;
+	  //     }
+	  //     return false;	
+			// }
 
 		};
-
-
 
 })();
