@@ -5,8 +5,8 @@
 		.module('myApp')
 		.controller('LotteryDetailsController', LotteryDetailsController);
 
-		LotteryDetailsController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$state', '$uibModal'];
-		function LotteryDetailsController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $state, $uibModal){
+		LotteryDetailsController.$inject = ['TicketsService','LeaguesService','LotteriesService','BowlersService', 'FlashService', '$stateParams', '$state', '$uibModal', '$filter'];
+		function LotteryDetailsController(TicketsService, LeaguesService, LotteriesService, BowlersService, FlashService, $stateParams, $state, $uibModal, $filter){
 			var vm = this;
 			vm.openBuyModal = openBuyModal;
 			vm.openDrawModal = openDrawModal;
@@ -71,7 +71,7 @@
 				})
 
 				modalInstance.result.then(function successCallback(ticket) {
-					FlashService.Success('Nice! You got a payout of ' + ticket.payout + '!', true)
+					FlashService.Success('Nice! You got a payout of ' + $filter('currency')(ticket.payout) + '!', true)
 					$state.go('leaguesshow', {leagueId: $stateParams.leagueId})
 				});
 
