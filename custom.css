@@ -18,8 +18,16 @@
 	background: #F2DEDE;
 }
 
+.navbar-header > .navbar-brand, .navbar-default .navbar-nav>li>a{
+	color: #fff;
+}
+
+.navbar-header > .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+	color: #b3c2bf;
+}
+
 nav.navbar-nav.navbar-right {
-	color: white;
+	color: #fff;
 }
 
 a.leaguelink.ng-binding:link, a.btn.btn-link {
@@ -28,33 +36,37 @@ a.leaguelink.ng-binding:link, a.btn.btn-link {
 }
 
 a.ng-binding:hover, .repeat:hover, a.leaguelink.repeat.ng-binding:hover, a.btn.btn-link:hover {
-	background: #FED28E;
+	background: #e9ece5;
 	font-style: normal;
 	text-decoration: none;
 }
 
 .ng-scope > a:visited, a.btn.btn-link:visited {
-	background: #FED28E;
+	background: #e9ece5;
 	font-style: normal;
 	text-decoration: none;
 }
 
 .page-header.text-center.ng-scope, .page-header.text-center{
-	color: white;
-	background: #FDC162;
-	border-color: #FDC162;
+	color: #fff;
+	background: #c0dfd9;
+	border-color: #c0dfd9;
 	margin: 0px;
 }
 
 .ng-scope{
-	background: #FDC162;
-	color: white;
+	background: #c0dfd9;
+	color: #fff;
+}
+
+.modal-header {
+	background: #3b3a36;
 }
 
 nav, .navbar, .nav, .navbar-default {
-	color: white;
-	border-color: #FDC771;
-	background: #FDC771;
+	color: #fff;
+	border-color: #3b3a36;
+	background: #3b3a36;
 	padding: 0;
 	margin-bottom: 0;
 }
