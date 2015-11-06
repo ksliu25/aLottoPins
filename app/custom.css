@@ -20,8 +20,9 @@ a, .nav, .navbar, .navbar-right, .navbar-default,{
 
 .page-header.text-center.ng-scope{
 	background: black;
+	/*background-clip: border-box;*/
 	/*padding: 0;*/
-	/*margin: 0;*/
+	margin: 0;
 }
 
 nav, .navbar, .nav, .navbar-default {
@@ -31,6 +32,7 @@ nav, .navbar, .nav, .navbar-default {
 }
 
 h1{
+	line-height: 50px;
 	margin: 0;
 	padding: 0;
 }
