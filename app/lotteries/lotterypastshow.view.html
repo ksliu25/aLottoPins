@@ -8,8 +8,7 @@
 	<div ng-controller="LotteryPastController as LPC">
 		<h3>Winning Ticket Info:</h3>
 		<h4>Bowler: {{ LPC.winner.name }}</h4>
-		<h4>Payout: {{ LPC.pastTicket.payout }}</h4>
-		<h4>Pins: {{ LPC.pastTicket.pin_count }}</h4>
+		<h4>Payout: {{ LPC.pastTicket.payout | currency }}</h4>
 	</div>
 </div>
 
