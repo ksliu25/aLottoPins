@@ -11,7 +11,8 @@
 			vm.open = open;
 			vm.selectedLeague;
 			vm.leagueBowlers;
-			vm.leagueLotteries;
+			vm.leaguePastLotteries;
+			vm.leagueCurrentLottery;
 			
 			(function initController(){
 				leagueShow($stateParams.leagueId);
@@ -23,17 +24,18 @@
 				LeaguesService.LeaguesShow(leagueId, function(response){
 					vm.selectedLeague = response.data
 				});
-			}
+			};
 
 			function leaguesBowlers(leagueId){
 				LeaguesService.LeaguesBowlers(leagueId, function(response){
 					vm.leagueBowlers = response.data
 				});
-			}
+			};
 
 			function leagueLotteries(leagueId){
 				LotteriesService.LotteriesLeagues(leagueId, function(response){
-					vm.leagueLotteries = response.data
+					vm.leaguePastLotteries = response.data.slice(0,-1).reverse();
+					vm.leagueCurrentLottery = response.data.slice(-1)[0];
 				});
 			};
 

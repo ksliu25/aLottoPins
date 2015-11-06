@@ -24,7 +24,7 @@
 					vm.drawnTicket = response.data;
 					findBowler(response.data.bowler_id);
 				});
-			}
+			};
 
 			function recordTicket(leagueId, lotteryId){
 				TicketsService.TicketRecordWinner(leagueId, lotteryId, vm.winningTicket, function(response){
@@ -32,13 +32,13 @@
 						$uibModalInstance.close(response.data);
 					}
 				});
-			}
+			};
 
 			function findBowler(bowlerId){
 				BowlersService.BowlersShow(bowlerId, function(response){
 					vm.winner = response.data
 				});
-			}
+			};
 
 			function cancel(){
 			   $uibModalInstance.dismiss();
