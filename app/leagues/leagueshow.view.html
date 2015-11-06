@@ -19,7 +19,7 @@
         <h2>Bowlers in this league</h2>
         <button type="button" class="btn btn-default" ng-click="vm.open()">Add Bowlers to {{ vm.selectedLeague.name }}</button>
     </div>
-    <div class="repeat" ng-repeat='bowler in vm.leagueBowlers'>
+    <div ng-repeat='bowler in vm.leagueBowlers'>
         {{ bowler.name }}
     </div>
 </div>

@@ -9,7 +9,7 @@
     </div>
     <h3> Number of leagues: {{ LC.leagues.length }}</h3>
     <div class="repeat" ng-repeat="league in LC.leagues">
-        <a ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
+        <a class="leaguelink" ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
     </div>
 </div>
 
@@ -19,7 +19,7 @@
         <button type="button" class="btn btn-default" ng-click="BC.open()">Add New Bowler</button>
     </div>
     <h3> Number of bowlers: {{ BC.bowlers.length }}</h3>
-    <div class="repeat" ng-repeat="bowler in BC.bowlers">
+    <div ng-repeat="bowler in BC.bowlers">
         {{ bowler.name }}
     </div>
 </div>
