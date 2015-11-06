@@ -9,6 +9,7 @@
 		function HomeController($scope, $location, $rootScope, BowlersService, FlashService, $routeParams, $route){
 			var vm = this;
 			vm.$location = $location;
+			
 		};
 
 })();

@@ -6,19 +6,23 @@
   text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
 
+nav.navbar-nav.navbar-right {
+	color: white;
+}
+
 a.leaguelink.ng-binding:link, a.btn.btn-link {
 	color: white;
 	font-style: normal;
 	text-decoration: none;
 }
 
-.repeat:hover, a.leaguelink.ng-binding:hover, a.btn.btn-link:hover {
+.repeat:hover, a.leaguelink.repeat.ng-binding:hover, a.btn.btn-link:hover {
 	background: #FED28E;
 	font-style: normal;
 	text-decoration: none;
 }
 
-a.leaguelink.ng-binding:visited, a.btn.btn-link:visited {
+a.leaguelink.repeat.ng-binding:visited, a.btn.btn-link:visited {
 	background: #FED28E;
 	font-style: normal;
 	text-decoration: none;
@@ -55,3 +59,33 @@ h1, h2, h3, h4, h5, h6{
 	margin: 0;
 	padding: 0;
 }
+
+.ng-leave { 
+	z-index:9999; 
+	-webkit-animation: moveToBottomFade .7s ease both;
+	animation: moveToBottomFade .7s ease both;
+}
+
+.ng-enter { 
+	z-index:8888;
+	    -webkit-animation: moveFromTopFade .7s ease both;
+	    	animation: moveFromTopFade .7s ease both;
+}
+
+@-webkit-keyframes moveFromTopFade {
+	from { opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@keyframes moveFromTopFade {
+	from { opacity: 0.3; -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToBottomFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateY(100%); }
+}
+@keyframes moveToBottomFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
+

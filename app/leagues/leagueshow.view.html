@@ -5,11 +5,11 @@
 <div class="lotteriesleagues col-md-4 col-md-offset-1">
     <h1>Current Lottery</h1>
     <div>
-        <a ui-sref="lotteriescurrentshow({leagueId: vm.selectedLeague.id, lotteryId: vm.leagueCurrentLottery.id})">{{ vm.leagueCurrentLottery.balance | currency }}</a>
+        <a class="repeat" ui-sref="lotteriescurrentshow({leagueId: vm.selectedLeague.id, lotteryId: vm.leagueCurrentLottery.id})">{{ vm.leagueCurrentLottery.balance | currency }}</a>
     </div>
     <h2>Past Lotteries</h2>
-    <div class="repeat" ng-show="vm.leaguePastLotteries" ng-repeat="lottery in vm.leaguePastLotteries">
-        <a ui-sref="lotteriespastshow({leagueId: vm.selectedLeague.id, lotteryId: lottery.id})">{{ lottery.balance | currency }}</a>
+    <div ng-show="vm.leaguePastLotteries" ng-repeat="lottery in vm.leaguePastLotteries">
+        <a class="repeat" ui-sref="lotteriespastshow({leagueId: vm.selectedLeague.id, lotteryId: lottery.id})">{{ lottery.balance | currency }}</a>
     </div>
 </div>
 

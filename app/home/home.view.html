@@ -8,8 +8,8 @@
         <button type="button" class="btn btn-default" ng-click="LC.open()">Add New League</button>
     </div>
     <h3> Number of leagues: {{ LC.leagues.length }}</h3>
-    <div class="repeat" ng-repeat="league in LC.leagues">
-        <a class="leaguelink" ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
+    <div ng-repeat="league in LC.leagues">
+        <a class="leaguelink repeat" ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
     </div>
 </div>
 
