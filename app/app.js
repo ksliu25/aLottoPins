@@ -43,19 +43,18 @@
         controller: 'LeagueDetailsController',
         controllerAs: 'vm'
       })
-      .state('lotteriesshow', {
+      .state('lotteriespastshow', {
         url: '/leagues/:leagueId/lotteries/:lotteryId',
-        templateUrl: 'lotteries/lotteryshow.view.html',
+        templateUrl: 'lotteries/lotterypastshow.view.html',
+        controller: 'LotteryDetailsController',
+        controllerAs: 'vm',
+      })
+      .state('lotteriescurrentshow', {
+        url: '/leagues/:leagueId/lotteries/:lotteryId/current',
+        templateUrl: 'lotteries/lotterycurrentshow.view.html',
         controller: 'LotteryDetailsController',
         controllerAs: 'vm'
       })
-      .state('lotteriesshow.winner', {
-        url: '/leagues/:leagueId/lotteries/:lotteryId/roll',
-        templateUrl: 'lotteries/lotterywinner.view.html',
-        controller: 'LotteryWinnerController',
-        controllerAs: 'vm'
-      })
-
   }
 
   run.$inject = ['$rootScope', '$location', '$cookies', '$http'];

@@ -15,7 +15,7 @@
 				vm.dataLoading = true;
 				UserService.Create(vm.user, function(response){
 					if (response.status === 200) {
-						FlashService.Success('Registration Successful for '+vm.user.name+'!', true);
+						FlashService.Success('Registration Successful for '+vm.user.email+'!', true);
 						$state.go('login');
 					} else {
 						FlashService.Error(response.message);

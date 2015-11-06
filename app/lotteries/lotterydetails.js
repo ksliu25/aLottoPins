@@ -18,7 +18,6 @@
 				getTickets($stateParams.leagueId, $stateParams.lotteryId);
 			})();
 
-
 			function lotteryShow(leagueId, lotteryId){
 				LotteriesService.LotteriesShow(leagueId, lotteryId, function(response){
 					vm.selectedLottery = response.data;

@@ -1,0 +1,17 @@
+<div class="page-header text-center">
+	<h2>Past Jackpot!</h2>
+	<h4>Previous Balance: {{vm.selectedLottery.balance | currency}}</h4>
+</div>
+
+<div class="col-md-6 col-md-offset-3 text-center">
+	<h2>Number of Tickets: {{vm.lotteryTickets.length}}</h2>
+	<div ng-controller="LotteryPastController as LPC">
+		<h3>Winning Ticket Info:</h3>
+		<h4>Bowler: {{ LPC.winner.name }}</h4>
+		<h4>Payout: {{ LPC.pastTicket.payout }}</h4>
+		<h4>Pins: {{ LPC.pastTicket.pin_count }}</h4>
+	</div>
+</div>
+
+
+
