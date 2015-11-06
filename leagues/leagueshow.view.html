@@ -1,0 +1,25 @@
+<div class="page-header text-center"> 
+    <h1>{{vm.selectedLeague.name}} League Page</h1>
+</div>
+
+<div class="lotteriesleagues col-md-4 col-md-offset-1">
+    <h1>Current Lottery</h1>
+    <div>
+        <a class="repeat" ui-sref="lotteriescurrentshow({leagueId: vm.selectedLeague.id, lotteryId: vm.leagueCurrentLottery.id})">{{ vm.leagueCurrentLottery.balance | currency }}</a>
+    </div>
+    <h2>Past Lotteries</h2>
+    <div ng-show="vm.leaguePastLotteries" ng-repeat="lottery in vm.leaguePastLotteries">
+        <a class="repeat" ui-sref="lotteriespastshow({leagueId: vm.selectedLeague.id, lotteryId: lottery.id})">{{ lottery.balance | currency }}</a>
+    </div>
+</div>
+
+
+<div class="bowlersleagues col-md-4 col-md-offset-1">
+    <div>    
+        <h2>Bowlers in this league</h2>
+        <button type="button" class="btn btn-default" ng-click="vm.open()">Add Bowlers to {{ vm.selectedLeague.name }}</button>
+    </div>
+    <div ng-repeat='bowler in vm.leagueBowlers'>
+        {{ bowler.name }}
+    </div>
+</div>

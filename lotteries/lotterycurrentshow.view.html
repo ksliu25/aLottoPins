@@ -1,0 +1,13 @@
+<div class="page-header text-center">
+	<h2>Current Jackpot!</h2>
+	<h4>Balance: {{vm.selectedLottery.balance | currency}}</h4>
+</div>
+
+<div class="col-md-6 col-md-offset-3 text-center">
+	<h2>Number of Tickets: {{vm.lotteryTickets.length}}</h2>
+	<button type="button" ng-disabled="vm.lotteryTickets.length === 0" class="btn btn-default" ng-click="vm.openDrawModal()">Draw a winner!</button>
+	<button type="button" class="btn btn-default" ng-click="vm.openBuyModal()">Buy a ticket?</button>
+</div>
+
+
+

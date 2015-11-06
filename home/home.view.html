@@ -1,0 +1,27 @@
+<div class="home">
+<div class="page-header text-center"> 
+    <h1>My Leagues</h1> 
+</div>
+
+<div ng-controller="LeagueController as LC" class="leagues col-md-4 col-md-offset-1">
+    <h2>Leagues</h2>
+    <div>    
+        <button type="button" class="btn btn-default" ng-click="LC.open()">Add New League</button>
+    </div>
+    <h3> Number of leagues: {{ LC.leagues.length }}</h3>
+    <div ng-repeat="league in LC.leagues">
+        <a class="leaguelink repeat" ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
+    </div>
+</div>
+
+<div ng-controller="BowlerController as BC" class="bowlers col-md-4 col-md-offset-1">
+    <h2>Bowlers</h2>
+    <div>    
+        <button type="button" class="btn btn-default" ng-click="BC.open()">Add New Bowler</button>
+    </div>
+    <h3> Number of bowlers: {{ BC.bowlers.length }}</h3>
+    <div ng-repeat="bowler in BC.bowlers">
+        {{ bowler.name }}
+    </div>
+</div>
+</div>

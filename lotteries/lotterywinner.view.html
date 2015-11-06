@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h2> Congratulations to {{ vm.winner.name }}! </h2>
+</div>
+<div class="modal-body">
+    <h3>How many pins did they knock down?</h3>
+    <form name="form" ng-submit="vm.recordTicket(vm.selectedLottery.league_id, vm.selectedLottery.id)" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.pin_count.$dirty && form.pin_count.$error.required }">
+            <label for="pins">pins</label>
+            <input type="text" name="pins" id="pins" class="form-control" ng-model="vm.winningTicket.pin_count" required />
+            <span ng-show="form.pins.$dirty && form.pins.$error.required" class="help-block">Pin count is required!</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Record pins</button>
+            <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>            
+        </div>
+    </form>
+</div>
+
