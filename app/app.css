@@ -1,10 +1,4 @@
 /* app css stylesheet */
-@import url(https://fonts.googleapis.com/css?family=Lato:300);
-
-* {
-  font-family: 'Lato', sans-serif;
-  /*background: #0AC2D2;*/
-}
 
 .menu {
   list-style: none;

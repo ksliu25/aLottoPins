@@ -2,7 +2,7 @@
 		<h1 ng-show="vm.selectedLeague">Add which bowler to {{ vm.selectedLeague.name }}?</h1>
 </div>
 <div class="modal-body">
-    <div ng-repeat='bowler in vm.allBowlers' ng-click="vm.leagueBowlerAdd(vm.selectedLeague.id, bowler.id, bowler.name)">
+    <div class="repeat" ng-repeat='bowler in vm.allBowlers' ng-click="vm.leagueBowlerAdd(vm.selectedLeague.id, bowler.id, bowler.name)">
     		<a href="#">{{ bowler.name }}</a>
     </div>    
 		<br>

@@ -1,3 +1,4 @@
+<div class="home">
 <div class="page-header text-center"> 
     <h1>My Leagues</h1> 
 </div>
@@ -9,7 +10,7 @@
     </div>
     <h3> Number of leagues: {{ LC.leagues.length }}</h3>
     <div ng-repeat="league in LC.leagues">
-        <a ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
+        <a class="leaguelink repeat" ui-sref="leaguesshow({leagueId: league.id})">{{ league.name }}</a>
     </div>
 </div>
 
@@ -22,4 +23,5 @@
     <div ng-repeat="bowler in BC.bowlers">
         {{ bowler.name }}
     </div>
+</div>
 </div>
