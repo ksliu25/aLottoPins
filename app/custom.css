@@ -3,7 +3,19 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 	padding: 0;
-  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  text-shadow: 2px 2px 1px rgba(127, 127, 127, 0.3);
+}
+
+.ng-binding.ng-scope.alert.alert-success {
+	margin: 0px;
+	color: #3C763D;
+	background: #DFF0D8;
+}
+
+.ng-binding.ng-scope.alert.alert-danger {
+	margin: 0px;
+	color: #AD4442;
+	background: #F2DEDE;
 }
 
 nav.navbar-nav.navbar-right {
@@ -11,34 +23,27 @@ nav.navbar-nav.navbar-right {
 }
 
 a.leaguelink.ng-binding:link, a.btn.btn-link {
-	color: white;
 	font-style: normal;
 	text-decoration: none;
 }
 
-.repeat:hover, a.leaguelink.repeat.ng-binding:hover, a.btn.btn-link:hover {
+a.ng-binding:hover, .repeat:hover, a.leaguelink.repeat.ng-binding:hover, a.btn.btn-link:hover {
 	background: #FED28E;
 	font-style: normal;
 	text-decoration: none;
 }
 
-a.leaguelink.repeat.ng-binding:visited, a.btn.btn-link:visited {
+.ng-scope > a:visited, a.btn.btn-link:visited {
 	background: #FED28E;
 	font-style: normal;
 	text-decoration: none;
 }
 
-
-.bowlers {
-	border: 2px white;
-	background: black;
-}
-
-.page-header.text-center.ng-scope{
+.page-header.text-center.ng-scope, .page-header.text-center{
 	color: white;
 	background: #FDC162;
 	border-color: #FDC162;
-	margin: 0;
+	margin: 0px;
 }
 
 .ng-scope{
@@ -48,7 +53,7 @@ a.leaguelink.repeat.ng-binding:visited, a.btn.btn-link:visited {
 
 nav, .navbar, .nav, .navbar-default {
 	color: white;
-	border-color: #FDC771;;
+	border-color: #FDC771;
 	background: #FDC771;
 	padding: 0;
 	margin-bottom: 0;
@@ -56,11 +61,11 @@ nav, .navbar, .nav, .navbar-default {
 
 h1, h2, h3, h4, h5, h6{
 	line-height: 50px;
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 }
 
-.ng-leave { 
+/*.ng-leave { 
 	z-index:9999; 
 	-webkit-animation: moveToBottomFade .7s ease both;
 	animation: moveToBottomFade .7s ease both;
@@ -68,8 +73,8 @@ h1, h2, h3, h4, h5, h6{
 
 .ng-enter { 
 	z-index:8888;
-	    -webkit-animation: moveFromTopFade .7s ease both;
-	    	animation: moveFromTopFade .7s ease both;
+  -webkit-animation: moveFromTopFade .7s ease both;
+  	animation: moveFromTopFade .7s ease both;
 }
 
 @-webkit-keyframes moveFromTopFade {
@@ -86,6 +91,6 @@ h1, h2, h3, h4, h5, h6{
 @keyframes moveToBottomFade {
 	from { }
 	to { opacity: 0.3; -webkit-transform: translateY(100%); transform: translateY(100%); }
-}
+}*/
 
 
