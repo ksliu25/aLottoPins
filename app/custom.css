@@ -1,0 +1,36 @@
+/*@import url(https://fonts.googleapis.com/css?family=Lato:300);*/
+/*
+* {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+}
+
+a, .nav, .navbar, .navbar-right, .navbar-default,{
+	padding: 0;
+	background: white;
+	color: #FDC771;
+	border: #FDC771;
+} 
+
+.ng-scope, .header, header, #header, .page-header {
+	padding: 0;
+  background: #FDC162;
+  color: white;
+}*/
+
+.page-header.text-center.ng-scope{
+	background: black;
+	/*padding: 0;*/
+	/*margin: 0;*/
+}
+
+nav, .navbar, .nav, .navbar-default {
+	background: #FDC162;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+h1{
+	margin: 0;
+	padding: 0;
+}
