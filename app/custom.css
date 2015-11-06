@@ -1,38 +1,113 @@
-/*@import url(https://fonts.googleapis.com/css?family=Lato:300);*/
-/*
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
 * {
   font-family: 'Lato', sans-serif;
   padding: 0;
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
 
-a, .nav, .navbar, .navbar-right, .navbar-default,{
-	padding: 0;
-	background: white;
-	color: #FDC771;
-	border: #FDC771;
-} 
-
-.ng-scope, .header, header, #header, .page-header {
-	padding: 0;
-  background: #FDC162;
-  color: white;
-}*/
+.repeat:hover {
+	background: #FED28E;
+}
 
 .page-header.text-center.ng-scope{
-	background: black;
+	color: white;
+	background: #FDC162;
+	border-color: #FDC162;
 	/*background-clip: border-box;*/
 	/*padding: 0;*/
 	margin: 0;
 }
 
-nav, .navbar, .nav, .navbar-default {
+.ng-scope{
 	background: #FDC162;
+	color: white;
+}
+
+nav, .navbar, .nav, .navbar-default {
+	color: white;
+	border-color: #FDC771;;
+	background: #FDC771;
 	padding: 0;
 	margin-bottom: 0;
 }
 
-h1{
+h1, h2, h3, h4, h5, h6{
 	line-height: 50px;
 	margin: 0;
 	padding: 0;
+}
+
+.animate-enter { 
+    -webkit-animation: enter 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: enter 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    display: block;
+    position: relative;
+} 
+@-webkit-keyframes enter {
+    from {
+        opacity: 0;
+        height: 0px;
+        left: -70px;
+    }
+    75% {
+        left: 15px;
+    }
+    to {
+        opacity: 1;
+        height: 30px;
+        left: 0px;
+    }
+}
+@keyframes enter {
+    from {
+        opacity: 0;
+        height: 0px;
+        left: -70px;
+    }
+    75% {
+        left: 15px;
+    }
+    to {
+        opacity: 1;
+        height: 30px;
+        left: 0px;
+    }
+}
+ 
+.animate-leave { 
+    -webkit-animation: leave 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: leave 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    display: block;
+    position: relative;
+} 
+@-webkit-keyframes leave {
+    to {
+        opacity: 0;
+        height: 0px;
+        left: -70px;
+    }
+    25% {
+        left: 15px;
+    }
+    from {
+        opacity: 1;
+        height: 30px;
+        left: 0px;
+    }
+}
+@keyframes leave {
+    to {
+        opacity: 0;
+        height: 0px;
+        left: -70px;
+    }
+    25% {
+        left: 15px;
+    }
+    from {
+        opacity: 1;
+        height: 30px;
+        left: 0px;
+    }
 }
