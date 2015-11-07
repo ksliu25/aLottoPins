@@ -12,12 +12,20 @@ To see a video demonstrating site functionality, go [here](https://vimeo.com/138
 ![visualizer](/resources/Visualizer.gif)
 
 
-####I can also add bowlers to those leagues:
+####Add bowlers to those leagues:
 ![guest voting](/resources/Voting.gif)
 
 
-####Those bowlers
+####Buy tickets for bowlers in the league:
 ![highest voted](/resources/Highest Voted.gif)
+
+####Draw a winning ticket and record the number of pins:
+![winning ticket](/resources/asfasf.gif)
+
+####View past jackpots:
+![past jackpot](/resources/asfasf.gif)
+
+
 
 
 ###About
