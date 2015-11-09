@@ -1,16 +1,16 @@
-'use strict';
+// 'use strict';
 
-describe('myApp.register module', function() {
+// describe('myApp.register module', function() {
 
-  beforeEach(module('myApp.register'));
+//   beforeEach(module('myApp.register'));
 
-  describe('register controller', function(){
+//   describe('register controller', function(){
 
-    it('should ....', inject(function($controller) {
-      //spec body
-      var registerCtrl = $controller('RegisterCtrl');
-      expect(RegisterCtrl).toBeDefined();
-    }));
+//     it('should ....', inject(function($controller) {
+//       //spec body
+//       var registerCtrl = $controller('RegisterCtrl');
+//       expect(RegisterCtrl).toBeDefined();
+//     }));
 
-  });
-});
+//   });
+// });

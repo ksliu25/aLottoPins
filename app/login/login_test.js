@@ -1,16 +1,16 @@
-'use strict';
+// 'use strict';
 
-describe('myApp.login module', function() {
+// describe('myApp.login module', function() {
 
-  beforeEach(module('myApp.login'));
+//   beforeEach(module('myApp.login'));
 
-  describe('login controller', function(){
+//   describe('login controller', function(){
 
-    it('should ....', inject(function($controller) {
-      //spec body
-      var loginCtrl = $controller('LoginCtrl');
-      expect(loginCtrl).toBeDefined();
-    }));
+//     it('should ....', inject(function($controller) {
+//       //spec body
+//       var loginCtrl = $controller('LoginCtrl');
+//       expect(loginCtrl).toBeDefined();
+//     }));
 
-  });
-});
+//   });
+// });
