@@ -3,27 +3,27 @@ aLottoPins is a web app that allows you to track a progressive jackpot for a bow
 
 ###Live Site / Demonstration
 
-To see the site live, go [here](http://audio-kratos.herokuapp.com/ "Live Site")
+To see the site live, go [here](http://ksliu25.github.io/aLottoPins/ "Live Site")
 
-To see a video demonstrating site functionality, go [here](https://vimeo.com/138661118 "Vimeo")
+To see a video demonstrating site functionality, go [here](https://vimeo.com/144936598 "Vimeo")
 
 ###Features
 ####As a user I can add leagues that I'm tracking:
-![visualizer](/resources/Visualizer.gif)
+![visualizer](/resources/LeagueAdding.gif)
 
 
 ####Add bowlers to those leagues:
-![guest voting](/resources/Voting.gif)
+![guest voting](/resources/AddBowlerToLeague.gif)
 
 
 ####Buy tickets for bowlers in the league:
-![highest voted](/resources/Highest Voted.gif)
+![highest voted](/resources/BuyTickets.gif)
 
 ####Draw a winning ticket and record the number of pins:
-![winning ticket](/resources/asfasf.gif)
+![winning ticket](/resources/DrawWinner.gif)
 
 ####View past jackpots:
-![past jackpot](/resources/asfasf.gif)
+![past jackpot](/resources/PastLotteries.gif)
 
 
 
