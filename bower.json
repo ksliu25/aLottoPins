@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "aLottoPins",
+  "description": "A starter project for AngularJS by Kenneth Liu",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/ksliu25/aLottoPins",
   "license": "MIT",
   "private": true,
   "dependencies": {
