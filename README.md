@@ -1,5 +1,5 @@
 #aLottoPins
-aLottoPins is a web app that allows you to track a progressive jackpot for a bowling league.
+aLottoPins is a web app that allows you to track a progressive jackpot for a bowling league. So much fun, it'll have you saying "Wow, that's A LOTTA PINS!" GET IT? HA HA HA.... just read the directions below.
 
 ###Live Site / Demonstration
 
