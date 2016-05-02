@@ -4,7 +4,8 @@ aLottoPins is a web app that allows you to track a progressive jackpot for a bow
 ###Live Site / Demonstration
 
 To see the site live, go [here](http://ksliu25.github.io/aLottoPins/ "Live Site")
-credentials are test/test as there are currently no client side or server side validations.
+
+Credentials are test/test as there are currently no client side or server side validations.
 
 To see a video demonstrating site functionality, go [here](https://vimeo.com/144936598 "Vimeo")
 
